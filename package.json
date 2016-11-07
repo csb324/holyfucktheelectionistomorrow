@@ -6,6 +6,8 @@
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
+    "build:static": "npm run build && npm run assets",
+    "assets": "copy index.html dist && copy static/* dist",
     "dev": "NODE_ENV=development npm start",
     "start": "node devServer.js",
     "lint": "eslint src"
@@ -45,6 +47,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
+    "copy": "^0.3.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.1.1",

@@ -13,15 +13,15 @@ export default class Idea extends Component {
     if (link) {
       return (
         <div className="idea-buttons">
-          <a className="idea-button" href={link} target="_blank">{yes}</a>
-          <a className="idea-button" onClick={() => { this.handleIncrement() }}>{no}</a>
+          <a key="buttonYes" className="idea-button" href={link} target="_blank">{yes}</a>
+          <a key="buttonNo" className="idea-button" onClick={() => { this.handleIncrement() }}>{no}</a>
         </div>
       )
     } else {
       return (
         <div className="idea-buttons">
-          <a className="idea-button" href="#" target="_blank">FACEBOOK</a>
-          <a className="idea-button" href="#" target="_blank">TWITTER</a>
+          <a key="shareFB" className="idea-button" href="#" target="_blank">FACEBOOK</a>
+          <a key="shareTW" className="idea-button" href="#" target="_blank">TWITTER</a>
         </div>
       )
     }
