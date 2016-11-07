@@ -16,24 +16,33 @@ $accent-orange: #ec6b2d;
 html {
   min-height: 100%;
 }
+
 body {
   background-color: $main-bg-color;
   background: url("/static/whitehouse.jpeg");
   background-position: fixed;
   background-size: cover;
   color: $text-color;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  // justify-content: center;
+
   font-family: 'Biryani', sans-serif;
   position: relative;
+  padding: 0;
+  margin: 0;
 }
-
 
 .main-app-container {
   padding: 2em 1em 0;
   max-width: 800px;
+  margin: 0 auto;
   flex-wrap: wrap;
-
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-app-nav {
@@ -98,6 +107,7 @@ body {
 }
 
 .ideas-container {
+  flex-grow: 1;
   position: relative;
 }
 .slide-enter, .slide-leave {
@@ -128,16 +138,17 @@ body {
 footer {
   // text-align: center;
   padding-top: 8em;
-
-  .start-over {
-    font-size: 1.4em;
-
-    text-transform: uppercase;
-    font-weight:800;
-  }
-
   a {
     text-decoration: none;
+  }
+}
+
+.start-over {
+  font-size: 1.4em;
+
+  text-transform: uppercase;
+  font-weight:800;
+  a {
     color: inherit;
 
     &:hover {
@@ -145,7 +156,20 @@ footer {
     }
   }
 
-  #heart{
-    color: $accent-red;
+}
+
+
+.credit {
+  a {
+    background-color: $accent-blue;
+    display: inline-block;
+    padding: 0 0.3em;
+    line-height: 1.4;
+    color: #fff;
+    transition: 0.1s;
+    &:hover {
+      background-color: #fff;
+      color: $darker-blue;
+    }
   }
 }
