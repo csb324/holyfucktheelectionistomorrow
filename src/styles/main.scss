@@ -19,6 +19,7 @@ html {
 body {
   background-color: $main-bg-color;
   background: url("/static/whitehouse.jpeg");
+  background-position: fixed;
   background-size: cover;
   color: $text-color;
   display: flex;
@@ -95,6 +96,31 @@ body {
     background-color: $accent-blue;
   }
 }
+
+.ideas-container {
+  position: relative;
+}
+.slide-enter, .slide-leave {
+  transition: 1000ms;
+  width: 100%;
+
+}
+.slide-enter {
+  position: relative;
+  left: 90vw;
+}
+.slide-enter-active {
+  left: 0;
+}
+.slide-leave {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.slide-leave-active {
+  left: -90vw;
+}
+
 
 
 

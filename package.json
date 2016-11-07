@@ -49,6 +49,7 @@
   "dependencies": {
     "copy": "^0.3.0",
     "react": "^0.14.3",
+    "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "^0.14.3",
     "react-redux": "^4.1.1",
     "redux-thunk": "^1.0.3"

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as CounterActions from '../actions/CounterActions';
 import Counter from '../components/Counter';
 import Idea from '../components/Idea';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 
 import Footer from '../components/Footer';
 
@@ -31,8 +32,15 @@ export class App extends Component {
           <p>You could check election news on twitter one more time, or you could actually fucking do something to help get Hillary Clinton elected.</p>
         </div>
         {/* notice that we then pass those unpacked props into the Counter component */}
-        <Idea idea={currentIdea} actions={actions} />
+        <div className="ideas-container">
+          <ReactCSSTransitionGroup
+            transitionName="slide"
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={1000} >
 
+            <Idea key={counter} idea={currentIdea} actions={actions} />
+          </ReactCSSTransitionGroup>
+        </div>
         <Footer actions={actions} />
       </div>
     );
