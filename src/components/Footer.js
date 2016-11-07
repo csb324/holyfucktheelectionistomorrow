@@ -14,7 +14,7 @@ export default class Footer extends Component {
       <footer>
       	<p className="start-over"><a href="#" onClick={() => { this.handleRestart() } }>Start over</a></p>
 
-				<p className="credit">clara fucking beyer made this</p>
+				<p className="credit"><a href="https://github.com/csb324" target="_blank">clara fucking beyer</a> made this</p>
 
       </footer>
     );
