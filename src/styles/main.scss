@@ -1,0 +1,125 @@
+// @import url(https://fonts.googleapis.com/css?family=Raleway:100,400);
+@import url('https://fonts.googleapis.com/css?family=Biryani:400,800,900');
+
+$main-bg-color: #000000;
+$text-color: #ffffff;
+$accent-blue: #00A9E0;
+$darker-blue: #0057B8;
+$accent-red: #E4002B;
+
+
+$accent-gray: #e1e0dd;
+$accent-black: #35342f;
+$accent-orange: #ec6b2d;
+
+
+html {
+  min-height: 100%;
+}
+body {
+  background-color: $main-bg-color;
+  background: url("/static/whitehouse.jpeg");
+  background-size: cover;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  font-family: 'Biryani', sans-serif;
+  position: relative;
+}
+
+
+.main-app-container {
+  padding: 2em 1em 0;
+  max-width: 800px;
+  flex-wrap: wrap;
+
+}
+
+.main-app-nav {
+  h1 {
+    font-weight: 900;
+    display: inline-block;
+    margin: 0;
+    margin-left: -0.4em;
+
+    line-height: 1.3;
+
+    padding: 0.2em 0.4em 0;
+    background-color: $accent-blue;
+  }
+
+  .background-red {
+    background-color: $accent-red;
+    margin-left: -0.2em;
+  }
+
+  font-size: 1.3em;
+}
+
+
+.idea-container {
+  padding-top: 2em;
+}
+.idea-intro {
+  font-weight: 900;
+}
+
+.idea-text {
+  font-size: 3em;
+  font-weight: 900;
+  margin-top: 0;
+  line-height: 1.2;
+  margin-bottom: 0.6em;
+}
+.idea-buttons {
+  display: flex;
+}
+.idea-button {
+  display: flex;
+  flex: 1 0 40%;
+  padding: 0.7em 0.5em 0.5em;
+  font-size: 1.5em;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 1em 0 0;
+  background-color: $darker-blue;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;  
+  transition: 0.2s;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: $accent-blue;
+  }
+}
+
+
+
+
+footer {
+  // text-align: center;
+  padding-top: 8em;
+
+  .start-over {
+    font-size: 1.4em;
+
+    text-transform: uppercase;
+    font-weight:800;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $accent-blue;
+    }
+  }
+
+  #heart{
+    color: $accent-red;
+  }
+}
