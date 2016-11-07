@@ -3,10 +3,18 @@ export const IDEAS_LIST = [
 		text: "FIND YOUR FUCKING POLLING PLACE",
 
 		link: "http://yourfuckingpollingplace.com/",
-		buttonYes: "GOOD IDEA",
+		buttonYes: "GOOD FUCKING IDEA",
 
 		buttonNo: "I ALREADY KNOW MY FUCKING POLLING PLACE"
-	},	
+	},
+
+	{
+		text: "FIGURE OUT WHAT THE FUCK TO BRING WITH YOU",
+		link: "https://www.rockthevote.com/get-informed/elections/voter-id-requirements/state/",
+
+		buttonYes: "FUCK, I NEED TO BRING SHIT?",
+		buttonNo: "THIS IS OLD FUCKING NEWS"
+	},
 
 	{
 		text: "MAKE A PLAN TO VOTE",
@@ -46,13 +54,7 @@ export const IDEAS_LIST = [
 
 	{
 		text: "TELL YOUR FUCKING FREINDS",
-
-		link: false,
-		// buttonYes: false,
-
-		// buttonNo: false
-
-
+		link: false
 	}
 
 ];
