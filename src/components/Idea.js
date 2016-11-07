@@ -20,8 +20,8 @@ export default class Idea extends Component {
     } else {
       return (
         <div className="idea-buttons">
-          <a key="shareFB" className="idea-button" href="#" target="_blank">FACEBOOK</a>
-          <a key="shareTW" className="idea-button" href="#" target="_blank">TWITTER</a>
+          <a key="shareFB" className="idea-button" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.holyfucktheelection.com/" target="_blank">FACEBOOK</a>
+          <a key="shareTW" className="idea-button" href="https://twitter.com/intent/tweet?text=HOLY%20FUCK%20THE%20ELECTION%20IS%20TOMORROW%20&url=http%3A//www.holyfucktheelection.com/&hashtags=imwithher" target="_blank">TWITTER</a>
         </div>
       )
     }
