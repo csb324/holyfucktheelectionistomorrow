@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER, RESTART_COUNTER } from '../constants/ActionTypes';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, RESTART_COUNTER, ALREADY_VOTED } from '../constants/ActionTypes';
 
 export function increment() {
   return {
@@ -16,6 +16,12 @@ export function restart() {
   return {
     type: RESTART_COUNTER
   };
+}
+
+export function alreadyVoted() {
+	return {
+		type: ALREADY_VOTED
+	}
 }
 
 // export function incrementIfOdd() {

@@ -1,5 +1,15 @@
 export const IDEAS_LIST = [
 	{
+		pretext: "FIRST THINGS FIRST...",
+		text: "HAVE YOU FUCKING VOTED YET?",
+
+		isVotedQuestion: true,
+
+		buttonNo: "OH FUCK, I HAVEN'T",
+		buttonYes: "FUCK YEAH I GOT MY STICKER"
+	},
+
+	{
 		text: "FIND YOUR FUCKING POLLING PLACE",
 
 		link: "http://yourfuckingpollingplace.com/",
