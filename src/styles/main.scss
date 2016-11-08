@@ -20,7 +20,7 @@ html {
 body {
   background-color: $main-bg-color;
   background: url("/static/whitehouse.jpeg");
-  background-position: fixed;
+  background-attachment: fixed;
   background-size: cover;
   color: $text-color;
 
@@ -120,7 +120,7 @@ a {
 }
 .slide-enter {
   position: relative;
-  left: 90vw;
+  left: 110vw;
 }
 .slide-enter-active {
   left: 0;
@@ -131,7 +131,7 @@ a {
   top: 0;
 }
 .slide-leave-active {
-  left: -90vw;
+  left: -110vw;
 }
 
 

@@ -27,7 +27,7 @@ export class App extends Component {
           <h1>THE</h1>
           <h1>ELECTION</h1>
           <h1>IS</h1>
-          <h1 className="background-red">TOMORROW</h1>
+          <h1 className="background-red">TODAY</h1>
 
           <p>You could check election news on twitter one more time, or you could actually fucking do something to help get Hillary Clinton elected.</p>
         </div>
