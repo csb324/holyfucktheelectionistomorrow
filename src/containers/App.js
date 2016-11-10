@@ -23,13 +23,11 @@ export class App extends Component {
       <div className="main-app-container">
         <div className="main-app-nav">
           <h1>HOLY</h1>
-          <h1>FUCK</h1>
-          <h1>THE</h1>
-          <h1>ELECTION</h1>
-          <h1>IS</h1>
-          <h1 className="background-red">TODAY</h1>
+          <h1>FUCK.</h1>
 
-          <p>You could check election news on twitter one more time, or you could actually fucking do something to help get Hillary Clinton elected.</p>
+          <h1 className="background-red">NOW WHAT?</h1>
+
+          <p>Donald Trump won the fucking election. What the fuck.</p>
         </div>
         {/* notice that we then pass those unpacked props into the Counter component */}
         <div className="ideas-container">
