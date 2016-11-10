@@ -85,6 +85,11 @@ a {
   line-height: 1.2;
   margin-bottom: 0.6em;
 }
+
+.idea-buttons {
+  flex-wrap: wrap;
+}
+
 .idea-button {
   display: flex;
   flex: 1 0 40%;

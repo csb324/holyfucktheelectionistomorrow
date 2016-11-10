@@ -9,26 +9,72 @@ export default class Idea extends Component {
     this.props.actions.increment();
   }
 
-  handleVoted() {
-    this.props.actions.alreadyVoted();
+  handleSetTopic(topic) {
+    this.props.actions.setTopic(topic);    
   }
 
-  renderButtons(link, yes, no, isVotedQuestion) {
-    if (isVotedQuestion) {
-      return (
-        <div className="idea-buttons">
-          <a key="buttonIVoted" className="idea-button" onClick={() => { this.handleVoted() }}>{yes}</a>
-          <a key="buttonIDidntVote" className="idea-button" onClick={() => { this.handleIncrement() }}>{no}</a>
-        </div>
-      )
+  handleSetAction(action) {
+    this.props.actions.setAction(action);
+  }
 
-    } else if (link) {
+  renderButtons(props) {
+    const { link, buttonYes, buttonNo, isVotedQuestion, buttons, linkList } = props;
+
+    console.log(props);
+
+    if (link) {
       return (
         <div className="idea-buttons">
-          <a key="buttonYes" className="idea-button" href={link} target="_blank">{yes}</a>
-          <a key="buttonNo" className="idea-button" onClick={() => { this.handleIncrement() }}>{no}</a>
+          <a key="buttonYes" className="idea-button" href={link} target="_blank">{buttonYes}</a>
+          <a key="buttonNo" className="idea-button" onClick={() => { this.handleIncrement() }}>{buttonNo}</a>
         </div>
       )
+    } else if (buttons) {
+      const buttonElements = buttons.map((button, index) => {
+        let onClick;
+
+        if (button.topic) {
+          onClick = () => {
+            this.handleSetTopic(button.topic);
+          }
+        } else if (button.action) {
+          onClick = () => {
+            this.handleSetAction(button.action);
+          }
+        } else {
+          return;
+        }
+
+        const key = "button-" + index;
+        return (
+          <a key={key} className="idea-button" onClick={onClick}>{button.text}</a>
+        )
+      })
+
+      return (
+        <div className="idea-buttons">
+          {buttonElements}
+        </div>
+      );
+
+    } else if (linkList) {
+
+      const links = this.props.links;
+      console.log(this.props);
+      
+      const buttonElements = links.map((button, index) => {
+        const key = "button-" + index;
+        return (
+          <a key={key} className="idea-button" target="_blank" href={button.link}>{button.text}</a>
+        )
+      })
+
+      return (
+        <div className="idea-buttons">
+          {buttonElements}
+        </div>
+      );
+
     } else {
       return (
         <div className="idea-buttons">
@@ -42,15 +88,25 @@ export default class Idea extends Component {
 
 
   render() {
-    const { text, link, buttonYes, buttonNo, isVotedQuestion } = this.props.idea;
+    let { text } = this.props.idea;
+    const { choices, links } = this.props;
+
     const pretext = this.props.idea.pretext || "YOU SHOULD...";
+
+    if (!text && links.length > 0) {
+      if (choices.action == "volunteer") {
+        text = "YOU SHOULD VOLUNTEER WITH ONE OF THESE FUCKING ORGANIZATIONS";
+      } else {
+        text = "YOU SHOULD DONATE TO ONE OF THESE FUCKING ORGANIZATIONS";
+      }
+    }
 
     return (
       <div className="idea-container">
         <p className="idea-intro">{ pretext }</p>
-        <div className="idea-text">{text}</div>
+        <div className="idea-text">{ text }</div>
 
-        { this.renderButtons(link, buttonYes, buttonNo, isVotedQuestion) }
+        { this.renderButtons(this.props.idea) }
 
       </div>
     );
