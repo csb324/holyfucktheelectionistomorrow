@@ -1,5 +1,5 @@
 export const LINKS_LIST = {
-	midterms: {
+	democrats: {
 		donate: [
 			{
 				text: "DEMOCRATIC NATIONAL COMMITTEE",

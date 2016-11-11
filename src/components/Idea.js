@@ -51,24 +51,25 @@ export default class Idea extends Component {
 
     if (linkList) {
       buttons = this.props.links;
-      buttons.push({
-        text: "FUCK YEAH. NOW WHAT?",
-        stepsForward: 1,
-        class: "idea-button--accent"
-      })
+
+      if (!buttons[buttons.length - 1].stepsForward) {
+        buttons.push({
+          text: "FUCK YEAH. NOW WHAT?",
+          stepsForward: 1,
+          class: "idea-button--accent"
+        });
+      }
     }
 
-    if (buttons) {
-      const buttonElements = buttons.map((button, index) => {        
-        return this.renderButton(button, index)
-      })
+    const buttonElements = buttons.map((button, index) => {        
+      return this.renderButton(button, index)
+    })
 
-      return (
-        <div className="idea-buttons">
-          {buttonElements}
-        </div>
-      );
-    }
+    return (
+      <div className="idea-buttons">
+        {buttonElements}
+      </div>
+    );
 
   }
 

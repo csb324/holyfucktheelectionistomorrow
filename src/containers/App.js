@@ -28,12 +28,12 @@ export class App extends Component {
     return (
       <div className="main-app-container">
         <div className="main-app-nav">
-          <h1>HOLY</h1>
-          <h1>FUCK.</h1>
+          <h1 className="background-dark">HOLY</h1>
+          <h1 className="background-dark">FUCK.</h1>
 
           <h1 className="background-red">NOW WHAT?</h1>
 
-          <p>Donald Trump won the fucking election. What the fuck.</p>
+          <p>That piece of shit known as Donald Trump won the election. But that doesn't mean it's fucking over.</p>
         </div>
         {/* notice that we then pass those unpacked props into the Counter component */}
         <div className="ideas-container">

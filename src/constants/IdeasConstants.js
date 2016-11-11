@@ -50,8 +50,8 @@ export const IDEAS_LIST = [
 
 		buttons: [
 			{
-				text: "MIDTERM FUCKING ELECTIONS",
-				topic: "midterms"
+				text: "ELECTING SOME FUCKING DEMOCRATS",
+				topic: "democrats"
 			},
 			{
 				text: "FUCKING LGBTQ SHIT",
