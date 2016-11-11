@@ -97,6 +97,10 @@ export const LINKS_LIST = {
 	racism: {
 		donate: [
 			{
+				text: "BLACK LIVES MATTER",
+				link: "https://donate.idex.org/checkout/donation?eid=66399"
+			},
+			{
 				text: "COUNCIL ON AMERICAN-ISLAMIC RELATIONS",
 				link: "https://www.cair.com/donations/general-donation/campaign/#/donation"
 			},
