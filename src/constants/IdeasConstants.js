@@ -3,10 +3,45 @@ export const IDEAS_LIST = [
 		pretext: "FIRST THINGS FIRST...",
 		text: "ARE YOU OKAY?",
 
-		link: "https://www.youtube.com/watch?v=p336IIjZCl8",
+		buttons: [
+			{	
+				text: "I NEED A FUCKING MINUTE",
+				stepsForward: 1
+			},
+			{
+				text: "I'M READY TO FUCK SHIT UP",
+				stepsForward: 2
+			}
+		]
+	},
 
-		buttonYes: "I'M SUPER FUCKED UP ABOUT THIS",
-		buttonNo: "I'M READY TO FUCK SHIT UP"
+	{
+		pretext: "THAT'S FUCKING FAIR.",
+		text: "CHECK THIS SHIT OUT (AND COME BACK LATER IF YOU WANT)",
+
+		buttons: [
+			{
+				text: "LOOK AT DOGS AND BABIES AND SHIT",
+				link: "https://www.youtube.com/watch?v=p336IIjZCl8"
+			},
+			{
+				text: "TAKE FUCKING CARE OF YOURSELF",
+				link: "https://www.wired.com/2016/11/critical-role-self-care-handling-post-election-stress/"
+			},
+			{
+				text: "REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS",
+				link: "https://www.buzzfeed.com/kelseyimpicciche/we-have-a-message-for-those-who-feel-alone?utm_term=.haK81DMVoa#.mcWMPKGd8V"
+			},
+			{
+				text: "AND SO DO ALL THESE PEOPLE WITH FUCKING SAFETY PINS",
+				link: "https://www.good.is/articles/safety-pin-america-trump-brexit"			
+			},
+			{
+				text: "OH BUT ONE MORE THING...",
+				stepsForward: 4,
+				class: "idea-button--accent"
+			}
+		]
 	},
 
 	{
@@ -19,11 +54,11 @@ export const IDEAS_LIST = [
 				topic: "midterms"
 			},
 			{
-				text: "MY BASIC FUCKING HUMAN RIGHTS",
-				topic: "humanrights"
+				text: "FUCKING LGBTQ SHIT",
+				topic: "lgbtq"
 			},
 			{
-				text: "FUCKING RACIST SHIT",
+				text: "RACIST MOTHERFUCKERS",
 				topic: "racism"
 			},
 			{
@@ -60,7 +95,18 @@ export const IDEAS_LIST = [
 
 	{
 		text: "TELL YOUR FUCKING FRIENDS",
-		link: false
+		
+		buttons: [
+			{	
+				text: "FACEBOOK",
+				link: "https://www.facebook.com/sharer/sharer.php?u=http%3A//www.holyfucktheelection.com/"
+			},
+			{
+				text: "TWITTER",
+				link: "https://twitter.com/intent/tweet?text=HOLY%20FUCK%20NOW%20WHAT%20&url=http%3A//www.holyfucktheelection.com/"
+			}
+		]
+
 	}
 
 ];

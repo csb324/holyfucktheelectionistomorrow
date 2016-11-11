@@ -32,13 +32,17 @@ export const LINKS_LIST = {
 				link: "http://action.dccc.org/page/s/volunteer"
 			},
 			{
+				text: "DEMOCRATIC LEGISLATIVE CAMPAIGN COMMITTEE",
+				link: "http://www.dlcc.org/volunteer"
+			},
+			{
 				text: "WHOEVER IS RUNNING FOR SHIT IN YOUR STATE",
 				link: "https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=who%20is%20running%20for%20office%20in%202018"
 			}
 		]
 	},
 
-	humanrights: {
+	lgbtq: {
 		donate: [
 			{
 				text: "THE ACLU",
@@ -47,17 +51,46 @@ export const LINKS_LIST = {
 			{
 				text: "THE HUMAN RIGHTS CAMPAIGN",
 				link: "https://give.hrc.org/ea-action/action?ea.client.id=1954&ea.campaign.id=51848"
+			},
+			{
+				text: "LAMBDA LEGAL",
+				link: "https://www.lambdalegal.org/donate"
+			},
+			{
+				text: "SOUTHERNERS ON NEW GROUND",
+				link: "https://song.ourpowerbase.net/civicrm/contribute/transact?reset=1&id=2"
+			},
+			{
+				text: "GLAAD",
+				link: "https://glaad.nationbuilder.com/donate"
+			},
+			{
+				text: "THE TREVOR PROJECT",
+				link: "https://give.thetrevorproject.org/checkout/donation?eid=63307"
 			}
 		],
 		volunteer: [
 			{
-				text: "MAZZONI CENTER FOR LGBTQ HEALTH & WELL-BEING",
+				text: "GLAAD",
+				link: "http://www.glaad.org/getinvolved/volunteer"
+			},
+			{
+				text: "MAZZONI CENTER",
 				link: "https://www.mazzonicenter.org/donate-now/volunteer-opportunities"
 			},
 			{
 				text: "THE SYLVIA RIVERA LAW PROJECT",
 				link: "http://srlp.org/get-involved/volunteer/"
-			}			
+			},
+			{
+				text: "THE TREVOR PROJECT",
+				link: "http://www.thetrevorproject.org/pages/volunteer"
+			},
+			{
+				text: "SOUTHERNERS ON NEW GROUND",
+				link: "https://song.ourpowerbase.net/civicrm/contribute/transact?reset=1&id=2"
+			}
+
 		]
 	},
 
@@ -83,6 +116,15 @@ export const LINKS_LIST = {
 				text: "THE ANTI DEFAMATION LEAGUE",
 				link: "https://secure2.convio.net/adl/site/SPageNavigator/donation-api/donation_form_single_main_1.html"
 			},
+			{
+				text: "THE ACLU",
+				link: "https://action.aclu.org/donate-aclu?ms=web_horiz_nav_hp"
+			},
+			{
+				text: "SHOWING UP FOR RACIAL JUSTICE",
+				link: "https://showingupforracialjustice.nationbuilder.com/donate"
+			}
+
 		],
 
 		volunteer: [
@@ -93,19 +135,104 @@ export const LINKS_LIST = {
 			{
 				text: "THE ANTI DEFAMATION LEAGUE",
 				link: "http://www.adl.org/regions/"
+			},
+			{
+				text: "THE NAACP",
+				link: "http://www.naacp.org/find-local-unit/"
+			},
+			{
+				text: "COUNCIL ON AMERICAN-ISLAMIC RELATIONS",
+				link: "https://www.cair.com/cair-chapters.html"
+			},
+			{
+				text: "SHOWING UP FOR RACIAL JUSTICE",
+				link: "http://www.showingupforracialjustice.org/organize"
 			}
 		]
 	},
 
 	women: {
-		donate: [],
-		volunteer: []
+		donate: [
+			{
+				text: "NOW",
+				link: "https://salsa.wiredforchange.com/o/5996/p/salsa/donation/common/public/?donate_page_KEY=11005"
+			},
+			{
+				text: "NARAL",
+				link: "https://actnow.prochoiceamerica.org/donate/supportnaral/?source=leftbar#.WCNXOOErKgQ"
+			},
+			{
+				text: "PLANNED PARENTHOOD",
+				link: "https://secure.ppaction.org/site/Donation2?df_id=12913&12913.donation=form1&_ga=1.38484843.997121566.1477408976"
+			},
+			{
+				text: "RAINN",
+				link: "https://donate.rainn.org/"
+			},
+			{
+				text: "NATIONAL COALITION AGAINST DOMESTIC VIOLENCE",
+				link: "http://ncadv.org/give-back/donate"
+			},
+			{
+				text: "REPRODUCTIVE HEALTH ACCESS PROJECT",
+				link: "https://donatenow.networkforgood.org/1438163"
+			},
+			{
+				text: "CENTER FOR REPRODUCTIVE RIGHTS",
+				link: "https://secure3.convio.net/cfrr/site/Donation2;jsessionid=97A4C7A9488B5DDF3450546DE1123DB2.app347a?1380.donation=form1&df_id=1380&web&_ga=1.145398384.513337705.1476995534"
+			}
+		],
+		volunteer: [
+			{
+				text: "NOW",
+				link: "http://nownyc.org/get-involved/"
+			},
+			{
+				text: "NARAL",
+				link: "http://actnow.prochoiceamerica.org/signup/volunteer/?source=website#.WCNXKuErKgQ"
+			},
 
+			{
+				text: "PLANNED PARENTHOOD",
+				link: "https://plannedparenthoodrccorpvolunteer.peoplefluent.com/index.html"
+			},
+			{
+				text: "RAINN",
+				link: "https://www.rainn.org/get-involved"
+			}
+		]
 	},
 
 	earth: {
-		donate: [],
-		volunteer: []
+		donate: [
+			{
+				text: "EARTHJUSTICE",
+				link: "https://secure.earthjustice.org/site/Donation2?df_id=10960&10960.donation=form1&_ga=1.146521844.1974926048.1478708236"
+			},
+			{
+				text: "NEXTGEN CLIMATE ACTION",
+				link: "https://nextgenclimate.org/donate/contribute-to-nextgen-climate-action/"
+			},
+			{
+				text: "THE SIERRA CLUB",
+				link: "https://vault.sierraclub.org/ways-to-give/"
+			},
+			{
+				text: "CLIMATE SCIENCE LEGAL DEFENSE FUND",
+				link: "http://climatesciencedefensefund.org/donate/monthly/"
+			}
+		],
+		volunteer: [
+			{
+				text: "EARTHJUSTICE",
+				link: "http://earthjustice.org/action"
+			},
+			{
+				text: "NEXTGEN CLIMATE ACTION",
+				link: "https://nextgenclimate.org/volunteer/"
+			}
+
+		]
 	}
 
 };
