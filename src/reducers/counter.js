@@ -3,7 +3,7 @@ import { IDEAS_COUNT } from '../constants/IdeasConstants';
 
 // this prevents the counter getting somehow ahead of the actual list of ideas
 function addToCounter(counter, int) {
-  return Math.min(state + int, IDEAS_COUNT - 1);
+  return Math.min(counter + int, IDEAS_COUNT - 1);
 }
 
 export default function counter(state = 0, action) {

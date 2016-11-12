@@ -17,33 +17,37 @@ export default class Idea extends Component {
     this.props.actions.setAction(action);
   }
 
+  handleClickOut(url) {
+    ga('send', 'event', 'ActionLink', 'click', url);
+    window.open(url, '_blank').focus();
+  }
+
   renderButton(button, index) {
     let onClick;
     const key = "button-" + index;
     const buttonClass = "idea-button " + (button.class || "");
 
     if (button.link) {
-      return (
-        <a key={key} className={buttonClass} target="_blank" href={button.link}>{button.text}</a>
-      )
-    } else {
-      if (button.topic) {
-        onClick = () => {
-          this.handleSetTopic(button.topic);
-        }
-      } else if (button.action) {
-        onClick = () => {
-          this.handleSetAction(button.action);
-        }
-      } else if (button.stepsForward) {
-        onClick = () => {
-          this.handleIncrementBy(button.stepsForward);
-        }
+      onClick = () => {
+        this.handleClickOut(button.link);
       }
-      return (
-        <a key={key} className={buttonClass} onClick={onClick}>{button.text}</a>
-      )
+    } else if (button.topic) {
+      onClick = () => {
+        this.handleSetTopic(button.topic);
+      }
+    } else if (button.action) {
+      onClick = () => {
+        this.handleSetAction(button.action);
+      }
+    } else if (button.stepsForward) {
+      onClick = () => {
+        this.handleIncrementBy(button.stepsForward);
+      }
     }
+
+    return (
+      <a key={key} className={buttonClass} onClick={onClick}>{button.text}</a>
+    )
   }
 
   renderButtons(props) {
