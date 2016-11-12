@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as CounterActions from '../actions/CounterActions';
-import Counter from '../components/Counter';
+import * as Actions from '../actions/Actions';
+
 import Idea from '../components/Idea';
+import Footer from '../components/Footer';
+
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 
-import Footer from '../components/Footer';
 
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
@@ -23,6 +24,12 @@ export class App extends Component {
 
     if (choices.topic && choices.action) {
       currentLinks = links[choices.topic][choices.action];
+
+      currentLinks.push({
+        text: "FUCK YEAH. NOW WHAT?",
+        stepsForward: 1,
+        class: "idea-button--accent"
+      });
     }
 
     return (
@@ -77,14 +84,14 @@ function mapStateToProps(state) {
 /**
  * Turns an object whose values are 'action creators' into an object with the same
  * keys but with every action creator wrapped into a 'dispatch' call that we can invoke
- * directly later on. Here we imported the actions specified in 'CounterActions.js' and
+ * directly later on. Here we imported the actions specified in 'Actions.js' and
  * used the bindActionCreators function Redux provides us.
  *
  * More info: http://redux.js.org/docs/api/bindActionCreators.html
  */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(CounterActions, dispatch)
+    actions: bindActionCreators(Actions, dispatch)
   };
 }
 

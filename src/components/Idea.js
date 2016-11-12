@@ -51,14 +51,6 @@ export default class Idea extends Component {
 
     if (linkList) {
       buttons = this.props.links;
-
-      if (!buttons[buttons.length - 1].stepsForward) {
-        buttons.push({
-          text: "FUCK YEAH. NOW WHAT?",
-          stepsForward: 1,
-          class: "idea-button--accent"
-        });
-      }
     }
 
     const buttonElements = buttons.map((button, index) => {        

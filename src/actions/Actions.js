@@ -1,27 +1,9 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER, RESTART_COUNTER, ALREADY_VOTED, INCREMENT_BY, SET_TOPIC, SET_ACTION } from '../constants/ActionTypes';
-
-export function increment() {
-  return {
-    type: INCREMENT_COUNTER
-  };
-}
-
-export function decrement() {
-  return {
-    type: DECREMENT_COUNTER
-  };
-}
+import { RESTART_COUNTER, INCREMENT_BY, SET_TOPIC, SET_ACTION } from '../constants/ActionTypes';
 
 export function restart() {
   return {
     type: RESTART_COUNTER
   };
-}
-
-export function alreadyVoted() {
-	return {
-		type: ALREADY_VOTED
-	}
 }
 
 export function incrementBy(number) {
