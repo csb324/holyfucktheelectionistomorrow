@@ -10,10 +10,12 @@ export default class Idea extends Component {
   }
 
   handleSetTopic(topic) {
-    this.props.actions.setTopic(topic);    
+    ga('send', 'event', 'SetTopic', topic);
+    this.props.actions.setTopic(topic);
   }
 
   handleSetAction(action) {
+    ga('send', 'event', 'SetAction', action);
     this.props.actions.setAction(action);
   }
 
