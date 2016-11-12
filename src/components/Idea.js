@@ -5,38 +5,95 @@ export default class Idea extends Component {
     super(props, context);
   }
 
-  handleIncrement() {
-    this.props.actions.increment();
+  handleIncrementBy(number) {
+    this.props.actions.incrementBy(number);
   }
 
-  renderButtons(link, yes, no) {
-    if (link) {
+  handleSetTopic(topic) {
+    this.props.actions.setTopic(topic);    
+  }
+
+  handleSetAction(action) {
+    this.props.actions.setAction(action);
+  }
+
+  renderButton(button, index) {
+    let onClick;
+    const key = "button-" + index;
+    const buttonClass = "idea-button " + (button.class || "");
+
+    if (button.link) {
       return (
-        <div className="idea-buttons">
-          <a key="buttonYes" className="idea-button" href={link} target="_blank">{yes}</a>
-          <a key="buttonNo" className="idea-button" onClick={() => { this.handleIncrement() }}>{no}</a>
-        </div>
+        <a key={key} className={buttonClass} target="_blank" href={button.link}>{button.text}</a>
       )
     } else {
+      if (button.topic) {
+        onClick = () => {
+          this.handleSetTopic(button.topic);
+        }
+      } else if (button.action) {
+        onClick = () => {
+          this.handleSetAction(button.action);
+        }
+      } else if (button.stepsForward) {
+        onClick = () => {
+          this.handleIncrementBy(button.stepsForward);
+        }
+      }
       return (
-        <div className="idea-buttons">
-          <a key="shareFB" className="idea-button" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.holyfucktheelection.com/" target="_blank">FACEBOOK</a>
-          <a key="shareTW" className="idea-button" href="https://twitter.com/intent/tweet?text=HOLY%20FUCK%20THE%20ELECTION%20IS%20TOMORROW%20&url=http%3A//www.holyfucktheelection.com/&hashtags=imwithher" target="_blank">TWITTER</a>
-        </div>
+        <a key={key} className={buttonClass} onClick={onClick}>{button.text}</a>
       )
     }
+  }
+
+  renderButtons(props) {
+    let { buttons, linkList } = props;
+
+    if (linkList) {
+      buttons = this.props.links;
+
+      if (!buttons[buttons.length - 1].stepsForward) {
+        buttons.push({
+          text: "FUCK YEAH. NOW WHAT?",
+          stepsForward: 1,
+          class: "idea-button--accent"
+        });
+      }
+    }
+
+    const buttonElements = buttons.map((button, index) => {        
+      return this.renderButton(button, index)
+    })
+
+    return (
+      <div className="idea-buttons">
+        {buttonElements}
+      </div>
+    );
 
   }
 
 
   render() {
-    const { text, link, buttonYes, buttonNo } = this.props.idea;
+    let { text } = this.props.idea;
+    const { choices, links } = this.props;
+
+    const pretext = this.props.idea.pretext || "YOU SHOULD...";
+
+    if (!text && links.length > 0) {
+      if (choices.action == "volunteer") {
+        text = "VOLUNTEER WITH ONE OF THESE FUCKING ORGANIZATIONS";
+      } else {
+        text = "DONATE TO ONE OF THESE FUCKING ORGANIZATIONS";
+      }
+    }
+
     return (
       <div className="idea-container">
-        <p className="idea-intro">YOU SHOULD...</p>
-        <div className="idea-text">{text}</div>
+        <p className="idea-intro">{ pretext }</p>
+        <div className="idea-text">{ text }</div>
 
-        { this.renderButtons(link, buttonYes, buttonNo) }
+        { this.renderButtons(this.props.idea) }
 
       </div>
     );

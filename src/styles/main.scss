@@ -19,10 +19,12 @@ html {
 
 body {
   background-color: $main-bg-color;
-  background: url("/static/whitehouse.jpeg");
-  background-position: fixed;
+  background: url("/static/sparkler.jpeg");
+  background-attachment: fixed;
   background-size: cover;
   color: $text-color;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -34,6 +36,17 @@ body {
   margin: 0;
 
   overflow-x: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(#111, 0.3);
+    z-index: -1;
+  }
 }
 
 a {
@@ -68,6 +81,9 @@ a {
     background-color: $accent-red;
     margin-left: -0.2em;
   }
+  .background-dark {
+    background-color: $main-bg-color;
+  }
 }
 
 
@@ -85,26 +101,45 @@ a {
   line-height: 1.2;
   margin-bottom: 0.6em;
 }
-.idea-button {
-  display: flex;
-  flex: 1 0 40%;
+
+.idea-buttons {
+  flex-wrap: wrap;
+}
+
+%button {
   padding: 0.7em 0.5em 0.5em;
   font-size: 1.5em;
   font-weight: 800;
   line-height: 1.2;
-  background-color: $darker-blue;
-  color: #fff;
   text-decoration: none;
   text-align: center;
-  justify-content: center;
-  align-items: center;  
   transition: 0.2s;
   border-radius: 3px;
 
+}
+
+.idea-button {
+  flex: 1 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+
+  @extend %button;
+
+  background-color: $darker-blue;
+  color: #fff;
   margin-bottom: 1em;
 
   &:hover {
     background-color: $accent-blue;
+  }
+}
+
+.idea-button--accent {
+  background-color: $accent-blue;
+  &:hover {
+    color: $accent-blue;
+    background-color: #fff;
   }
 }
 
@@ -120,7 +155,7 @@ a {
 }
 .slide-enter {
   position: relative;
-  left: 90vw;
+  left: 110vw;
 }
 .slide-enter-active {
   left: 0;
@@ -131,7 +166,7 @@ a {
   top: 0;
 }
 .slide-leave-active {
-  left: -90vw;
+  left: -110vw;
 }
 
 
@@ -147,15 +182,15 @@ footer {
 }
 
 .start-over {
-  font-size: 1.4em;
-
   text-transform: uppercase;
-  font-weight:800;
   a {
+    display: inline-block;
+    @extend %button;
+    background-color: #111;
     color: inherit;
 
     &:hover {
-      color: $accent-blue;
+      background-color: #000;
     }
   }
 
@@ -163,7 +198,7 @@ footer {
 
 .credit {
   a {
-    background-color: $accent-blue;
+    background-color: $accent-red;
     display: inline-block;
     padding: 0 0.3em;
     line-height: 1.4;

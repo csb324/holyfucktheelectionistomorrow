@@ -16,20 +16,24 @@ import Footer from '../components/Footer';
 export class App extends Component {
   render() {
     // we can use ES6's object destructuring to effectively 'unpack' our props
-    const { counter, actions, ideas } = this.props;
+    const { counter, actions, ideas, choices, links } = this.props;
     const currentIdea = ideas[counter];
+
+    let currentLinks = [];
+
+    if (choices.topic && choices.action) {
+      currentLinks = links[choices.topic][choices.action];
+    }
 
     return (
       <div className="main-app-container">
         <div className="main-app-nav">
-          <h1>HOLY</h1>
-          <h1>FUCK</h1>
-          <h1>THE</h1>
-          <h1>ELECTION</h1>
-          <h1>IS</h1>
-          <h1 className="background-red">TOMORROW</h1>
+          <h1 className="background-dark">HOLY</h1>
+          <h1 className="background-dark">FUCK.</h1>
 
-          <p>You could check election news on twitter one more time, or you could actually fucking do something to help get Hillary Clinton elected.</p>
+          <h1 className="background-red">NOW WHAT?</h1>
+
+          <p>That piece of shit known as Donald Trump won the election. But that doesn't mean it's fucking over.</p>
         </div>
         {/* notice that we then pass those unpacked props into the Counter component */}
         <div className="ideas-container">
@@ -38,7 +42,7 @@ export class App extends Component {
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000} >
 
-            <Idea key={counter} idea={currentIdea} actions={actions} />
+            <Idea key={counter} idea={currentIdea} actions={actions} links={currentLinks} choices={choices} />
           </ReactCSSTransitionGroup>
         </div>
         <Footer actions={actions} />
@@ -50,7 +54,9 @@ export class App extends Component {
 App.propTypes = {
   counter: PropTypes.number.isRequired,
   actions: PropTypes.object.isRequired,
-  ideas: PropTypes.array.isRequired
+  ideas: PropTypes.array.isRequired,
+  links: PropTypes.object.isRequired,
+  choices: PropTypes.object.isRequired
 };
 
 
@@ -62,7 +68,9 @@ App.propTypes = {
 function mapStateToProps(state) {
   return {
     counter: state.counter,
-    ideas: state.ideas
+    ideas: state.ideas,
+    choices: state.choices,
+    links: state.links
   };
 }
 

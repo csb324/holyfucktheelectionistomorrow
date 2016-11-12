@@ -1,60 +1,112 @@
 export const IDEAS_LIST = [
 	{
-		text: "FIND YOUR FUCKING POLLING PLACE",
+		pretext: "FIRST THINGS FIRST...",
+		text: "ARE YOU OKAY?",
 
-		link: "http://yourfuckingpollingplace.com/",
-		buttonYes: "GOOD FUCKING IDEA",
-
-		buttonNo: "I ALREADY KNOW MY FUCKING POLLING PLACE"
+		buttons: [
+			{	
+				text: "I NEED A FUCKING MINUTE",
+				stepsForward: 1
+			},
+			{
+				text: "I'M READY TO FUCK SHIT UP",
+				stepsForward: 2
+			}
+		]
 	},
 
 	{
-		text: "FIGURE OUT WHAT THE FUCK TO BRING WITH YOU",
-		link: "https://www.rockthevote.com/get-informed/elections/voter-id-requirements/state/",
+		pretext: "THAT'S FUCKING FAIR.",
+		text: "CHECK THIS SHIT OUT (AND COME BACK LATER IF YOU WANT)",
 
-		buttonYes: "FUCK, I NEED TO BRING SHIT?",
-		buttonNo: "THIS IS OLD FUCKING NEWS"
+		buttons: [
+			{
+				text: "LOOK AT DOGS AND BABIES AND SHIT",
+				link: "https://www.youtube.com/watch?v=p336IIjZCl8"
+			},
+			{
+				text: "TAKE FUCKING CARE OF YOURSELF",
+				link: "https://www.wired.com/2016/11/critical-role-self-care-handling-post-election-stress/"
+			},
+			{
+				text: "REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS",
+				link: "https://www.buzzfeed.com/kelseyimpicciche/we-have-a-message-for-those-who-feel-alone?utm_term=.haK81DMVoa#.mcWMPKGd8V"
+			},
+			{
+				text: "AND SO DO ALL THESE PEOPLE WITH FUCKING SAFETY PINS",
+				link: "https://www.good.is/articles/safety-pin-america-trump-brexit"			
+			},
+			{
+				text: "OH BUT ONE MORE THING...",
+				stepsForward: 4,
+				class: "idea-button--accent"
+			}
+		]
 	},
 
 	{
-		text: "MAKE A PLAN TO VOTE",
+		pretext: "OKAY. LET'S FUCK SHIT UP.",
+		text: "WHAT'S ON YOUR MIND?",
 
-		link: "https://www.hillaryclinton.com/makeaplan/",
-		buttonYes: "OH YEAH I SHOULD NAIL THAT SHIT DOWN",
+		buttons: [
+			{
+				text: "ELECTING SOME FUCKING DEMOCRATS",
+				topic: "democrats"
+			},
+			{
+				text: "FUCKING LGBTQ SHIT",
+				topic: "lgbtq"
+			},
+			{
+				text: "RACIST MOTHERFUCKERS",
+				topic: "racism"
+			},
+			{
+				text: "NOT GETTING GRABBED BY THE FUCKING PUSSY",
+				topic: "women"
+			},
+			{
+				text: "THE FUCKING EARTH IS GOING TO LITERALLY BE ON FUCKING FIRE",
+				topic: "earth"
+			}
+		]
+	},
 
-		buttonNo: "VOTING IS ALREADY ON MY FUCKING CALENDAR"
-	},	
-
+	// RE: MIDTERM ELECTIONS
 	{
-		text: "KNOCK ON SOME FUCKING DOORS",
+		pretext: "FUCK YEAH.",
+		text: "WHAT CAN YOU SPARE?",
 
-		link: "https://www.hillaryclinton.com/start/?act=canvass",
-		buttonYes: "I FUCKING LOVE GETTING OUT THE VOTE",
-
-		buttonNo: "I DON'T WANT TO LEAVE MY FUCKING HOUSE"
+		buttons: [
+			{
+				text: "MONEY",
+				action: "donate"
+			},
+			{
+				text: "TIME",
+				action: "volunteer"
+			}
+		]
 	},
 
 	{
-		text: "CALL SOME FUCKING VOTERS",
-
-		link: "https://www.hillaryclinton.com/calls/",
-		buttonYes: "I CAN DO THIS FROM MY COUCH? FUCK YES",
-
-		buttonNo: "I'M TOO FUCKING BUSY"
+		linkList: true
 	},
 
 	{
-		text: "DONATE FIVE FUCKING DOLLARS",
+		text: "TELL YOUR FUCKING FRIENDS",
+		
+		buttons: [
+			{	
+				text: "FACEBOOK",
+				link: "https://www.facebook.com/sharer/sharer.php?u=http%3A//www.holyfucktheelection.com/"
+			},
+			{
+				text: "TWITTER",
+				link: "https://twitter.com/intent/tweet?text=HOLY%20FUCK%20NOW%20WHAT%20&url=http%3A//www.holyfucktheelection.com/"
+			}
+		]
 
-		link: "https://www.hillaryclinton.com/donate/",
-		buttonYes: "IT'S THE LEAST I CAN FUCKING DO",
-
-		buttonNo: "I'M FUCKING BROKE"
-	},
-
-	{
-		text: "TELL YOUR FUCKING FREINDS",
-		link: false
 	}
 
 ];

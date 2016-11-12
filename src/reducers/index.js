@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import counter from './counter';
 import ideas from './ideas';
+import links from './links';
+import choices from './choices';
 
 /**
  * combineReducers is important to understand. As your app might grow in size
@@ -17,7 +19,9 @@ import ideas from './ideas';
  */
 const rootReducer = combineReducers({
   counter, // you might be used to: counter: counter,
-  ideas
+  ideas,
+  links,
+  choices
 });
 
 export default rootReducer;
