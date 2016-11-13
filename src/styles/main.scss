@@ -107,6 +107,7 @@ a {
 }
 
 %button {
+  font-family: 'Biryani', sans-serif;
   padding: 0.7em 0.5em 0.5em;
   font-size: 1.5em;
   font-weight: 800;
@@ -115,14 +116,14 @@ a {
   text-align: center;
   transition: 0.2s;
   border-radius: 3px;
-
 }
 
 .idea-button {
   flex: 1 0 40%;
+  border: none;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 
   @extend %button;
 
@@ -182,9 +183,11 @@ footer {
 }
 
 .start-over {
-  text-transform: uppercase;
-  a {
+
+  button {
+    text-transform: uppercase;
     display: inline-block;
+    border: none;
     @extend %button;
     background-color: #111;
     color: inherit;
@@ -214,7 +217,7 @@ footer {
 @media screen and (min-width: 501px) {
   .main-app-nav {
     font-size: 1.3em;
-  } 
+  }
 
   .idea-text {
     font-size: 3em;
