@@ -24,6 +24,11 @@ export default class Idea extends Component {
     window.open(url, '_blank').focus();
   }
 
+  componentDidMount() {
+    // Focus on header so we can tab through options
+    document.querySelector('.idea-text').focus();
+  }
+
   renderButton(button, index) {
     let onClick;
     const key = "button-" + index;
@@ -48,7 +53,7 @@ export default class Idea extends Component {
     }
 
     return (
-      <a key={key} className={buttonClass} onClick={onClick}>{button.text}</a>
+      <button key={key} className={buttonClass} onClick={onClick}>{button.text}</button>
     )
   }
 
@@ -59,7 +64,7 @@ export default class Idea extends Component {
       buttons = this.props.links;
     }
 
-    const buttonElements = buttons.map((button, index) => {        
+    const buttonElements = buttons.map((button, index) => {
       return this.renderButton(button, index)
     })
 
@@ -89,7 +94,7 @@ export default class Idea extends Component {
     return (
       <div className="idea-container">
         <p className="idea-intro">{ pretext }</p>
-        <div className="idea-text">{ text }</div>
+        <div className="idea-text" tabIndex="-1">{ text }</div>
 
         { this.renderButtons(this.props.idea) }
 
