@@ -109,7 +109,7 @@ export const LINKS_LIST = {
 				link: "https://donate.naacp.org/page/contribute/make-a-contribution"
 			},
 			{
-				text: "NATIONAL IMMIGRAITON LAW CENTER",
+				text: "NATIONAL IMMIGRATION LAW CENTER",
 				link: "https://nilc.z2systems.com/np/clients/nilc/donation.jsp?campaign=15&"
 			},
 			{
@@ -214,16 +214,16 @@ export const LINKS_LIST = {
 				link: "https://secure.earthjustice.org/site/Donation2?df_id=10960&10960.donation=form1&_ga=1.146521844.1974926048.1478708236"
 			},
 			{
-				text: "NEXTGEN CLIMATE ACTION",
-				link: "https://nextgenclimate.org/donate/contribute-to-nextgen-climate-action/"
-			},
-			{
 				text: "THE SIERRA CLUB",
 				link: "https://vault.sierraclub.org/ways-to-give/"
 			},
 			{
 				text: "CLIMATE SCIENCE LEGAL DEFENSE FUND",
 				link: "http://climatesciencedefensefund.org/donate/monthly/"
+			},
+			{
+				text: "LEAGUE OF CONSERVATION VOTERS",
+				link: "https://secure3.convio.net/lcv/site/Donation2?df_id=1741&1741.donation=form1"
 			}
 		],
 		volunteer: [
@@ -235,7 +235,6 @@ export const LINKS_LIST = {
 				text: "NEXTGEN CLIMATE ACTION",
 				link: "https://nextgenclimate.org/volunteer/"
 			}
-
 		]
 	}
 
