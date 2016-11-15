@@ -99,8 +99,8 @@ export const IDEAS_LIST = [
 
 	{
 		text: "TELL YOUR FUCKING FRIENDS",
-		analyticTag: 'share',
-		
+		analyticsTag: 'share',
+
 		buttons: [
 			{	
 				text: "FACEBOOK",
