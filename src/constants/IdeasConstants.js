@@ -18,6 +18,7 @@ export const IDEAS_LIST = [
 	{
 		pretext: "THAT'S FUCKING FAIR.",
 		text: "CHECK THIS SHIT OUT (AND COME BACK LATER IF YOU WANT)",
+		analyticsTag: 'selfcare',
 
 		buttons: [
 			{
@@ -76,7 +77,6 @@ export const IDEAS_LIST = [
 		]
 	},
 
-	// RE: MIDTERM ELECTIONS
 	{
 		pretext: "FUCK YEAH.",
 		text: "WHAT CAN YOU SPARE?",
@@ -99,6 +99,7 @@ export const IDEAS_LIST = [
 
 	{
 		text: "TELL YOUR FUCKING FRIENDS",
+		analyticTag: 'share',
 		
 		buttons: [
 			{	
