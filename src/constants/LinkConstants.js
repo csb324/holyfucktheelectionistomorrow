@@ -250,7 +250,7 @@ export const LINKS_LIST = {
 			{
 				text: "NEXTGEN CLIMATE ACTION",
 				link: "https://nextgenclimate.org/volunteer/"
-			}
+			},
 			{
 				text: "SAFECAST",
 				link: "http://blog.safecast.org/volunteer/"
