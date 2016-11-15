@@ -27,6 +27,7 @@ export default class Idea extends Component {
   componentDidMount() {
     // Focus on header so we can tab through options
     document.querySelector('.idea-text').focus();
+
   }
 
   renderButton(button, index) {

@@ -90,6 +90,7 @@ a {
 .idea-container {
   padding-top: 2em;
 }
+
 .idea-intro {
   font-weight: 900;
 }
@@ -100,6 +101,7 @@ a {
   margin-top: 0;
   line-height: 1.2;
   margin-bottom: 0.6em;
+  outline: none;
 }
 
 .idea-buttons {
@@ -119,25 +121,27 @@ a {
 }
 
 .idea-button {
-  flex: 1 0 40%;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   @extend %button;
-
+  align-items: center;
   background-color: $darker-blue;
+  border: none;
   color: #fff;
+  display: flex;
+  flex: 1 0 40%;
+  justify-content: center;
+  line-height: 1.4;
   margin-bottom: 1em;
+  width: 100%;
 
   &:hover {
     background-color: $accent-blue;
+    cursor: pointer;
   }
 }
 
 .idea-button--accent {
   background-color: $accent-blue;
+
   &:hover {
     color: $accent-blue;
     background-color: #fff;
@@ -175,31 +179,33 @@ a {
 
 
 footer {
-  // text-align: center;
-  padding-top: 8em;
+  padding-top: 5em;
+  text-align: center;
+
   a {
     text-decoration: none;
   }
 }
 
-.start-over {
+.start-over-button {
+  @extend %button;
+  background-color: #000;
+  border: none;
+  color: inherit;
+  display: inline-block;
+  margin-bottom: 2em;
+  padding: .7em 1em .5em;
+  text-transform: uppercase;
 
-  button {
-    text-transform: uppercase;
-    display: inline-block;
-    border: none;
-    @extend %button;
-    background-color: #111;
-    color: inherit;
-
-    &:hover {
-      background-color: #000;
-    }
+  &:hover {
+    background-color: #222;
+    cursor: pointer;
   }
-
 }
 
 .credit {
+  text-align: left;
+
   a {
     background-color: $accent-red;
     display: inline-block;
@@ -207,6 +213,7 @@ footer {
     line-height: 1.4;
     color: #fff;
     transition: 0.1s;
+
     &:hover {
       background-color: #fff;
       color: $darker-blue;
@@ -231,5 +238,4 @@ footer {
   .idea-button {
     margin-right: 1em;
   }
-
 }
