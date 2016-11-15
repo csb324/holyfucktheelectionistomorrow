@@ -68,6 +68,10 @@ export const LINKS_LIST = {
 				text: "THE TREVOR PROJECT",
 				link: "https://give.thetrevorproject.org/checkout/donation?eid=63307"
 			}
+			{
+				text: "SILVIA RIVERA LAW PROJECT",
+				link: "http://srlp.org/srlp/?page=CiviCRM&q=civicrm/contribute/transact&reset=1&id=4"
+			}
 		],
 		volunteer: [
 			{
@@ -127,6 +131,10 @@ export const LINKS_LIST = {
 			{
 				text: "SHOWING UP FOR RACIAL JUSTICE",
 				link: "https://showingupforracialjustice.nationbuilder.com/donate"
+			}
+			{
+				text: "NATIVE AMERICAN RIGHTS FUND",
+				link: "https://secure2.convio.net/narf/site/Donation2?idb=1549719056&DONATION_LEVEL_ID_SELECTED=1&df_id=1641&1641.donation=form1&mfc_pref=T&idb=0"
 			}
 
 		],
@@ -225,6 +233,15 @@ export const LINKS_LIST = {
 				text: "LEAGUE OF CONSERVATION VOTERS",
 				link: "https://secure3.convio.net/lcv/site/Donation2?df_id=1741&1741.donation=form1"
 			}
+			{
+				text: "NATURAL RESOURCES DEFENSE COUNCIL",
+				link: "https://secure.nrdconline.org/site/Donation2?df_id=15743&15743.donation=form1&_ga=1.264541580.203263383.1479235887"
+			}
+			{
+				text: "COOL EARTH",
+				link: "https://www.coolearth.org/get-involved/donate/"
+			}
+
 		],
 		volunteer: [
 			{
