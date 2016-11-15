@@ -229,6 +229,11 @@ export const LINKS_LIST = {
 				text: "NATURAL RESOURCES DEFENSE COUNCIL",
 				link: "https://secure.nrdconline.org/site/Donation2?df_id=15743&15743.donation=form1&_ga=1.264541580.203263383.1479235887"
 			}
+			{
+				text: "COOL EARTH",
+				link: "https://www.coolearth.org/get-involved/donate/"
+			}
+
 		],
 		volunteer: [
 			{
