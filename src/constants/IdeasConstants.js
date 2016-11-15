@@ -29,6 +29,10 @@ export const IDEAS_LIST = [
 				link: "https://www.wired.com/2016/11/critical-role-self-care-handling-post-election-stress/"
 			},
 			{
+				text: "PICK UP A FUCKING PENCIL AND WRITE THIS SHIT DOWN",
+				link: "http://nymag.com/scienceofus/2016/09/journaling-can-help-you-out-of-a-bad-mood.html"
+			},
+			{
 				text: "REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS",
 				link: "https://www.buzzfeed.com/kelseyimpicciche/we-have-a-message-for-those-who-feel-alone?utm_term=.haK81DMVoa#.mcWMPKGd8V"
 			},
