@@ -163,6 +163,29 @@ export const LINKS_LIST = {
 		]
 	},
 
+	onlineSafety: {
+		donate: [
+			{
+				text: "TOR PROJECT",
+				link: "https://www.torproject.org/donate/donate.html.en"
+			},
+			{
+				text: "ACLU",
+				link: "https://action.aclu.org/secure/protect-rights-freedoms-we-believe-0"
+			}
+		],
+		volunteer: [
+			{
+				text: "TOR",
+				link: "https://www.torproject.org/getinvolved/volunteer.html.en"
+			},
+			{
+				text: "ACLU",
+				link: "https://www.aclu.org/action"
+			}
+		]
+	},
+
 	women: {
 		donate: [
 			{
@@ -241,6 +264,7 @@ export const LINKS_LIST = {
 				text: "COOL EARTH",
 				link: "https://www.coolearth.org/get-involved/donate/"
 			}
+
 		],
 		volunteer: [
 			{
@@ -253,7 +277,7 @@ export const LINKS_LIST = {
 			},
 			{
 				text: "SAFECAST",
-				link: "http://blog.safecast.org/volunteer/"
+				link: "http://blog.safecast.org/volunteer"
 			}
 		]
 	}
