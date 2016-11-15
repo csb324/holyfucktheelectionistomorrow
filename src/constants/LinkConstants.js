@@ -225,6 +225,10 @@ export const LINKS_LIST = {
 				text: "LEAGUE OF CONSERVATION VOTERS",
 				link: "https://secure3.convio.net/lcv/site/Donation2?df_id=1741&1741.donation=form1"
 			}
+						{
+				text: "SAFECAST",
+				link: "http://blog.safecast.org/donate/"
+			}
 		],
 		volunteer: [
 			{
@@ -234,6 +238,10 @@ export const LINKS_LIST = {
 			{
 				text: "NEXTGEN CLIMATE ACTION",
 				link: "https://nextgenclimate.org/volunteer/"
+			}
+			{
+				text: "SAFECAST",
+				link: "http://blog.safecast.org/volunteer/"
 			}
 		]
 	}
