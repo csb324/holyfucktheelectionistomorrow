@@ -210,14 +210,6 @@ export const LINKS_LIST = {
 	earth: {
 		donate: [
 			{
-				text: "EARTHJUSTICE",
-				link: "https://secure.earthjustice.org/site/Donation2?df_id=10960&10960.donation=form1&_ga=1.146521844.1974926048.1478708236"
-			},
-			{
-				text: "THE SIERRA CLUB",
-				link: "https://vault.sierraclub.org/ways-to-give/"
-			},
-			{
 				text: "CLIMATE SCIENCE LEGAL DEFENSE FUND",
 				link: "http://climatesciencedefensefund.org/donate/monthly/"
 			},
