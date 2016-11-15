@@ -4,7 +4,7 @@ export const IDEAS_LIST = [
 		text: "ARE YOU OKAY?",
 
 		buttons: [
-			{	
+			{
 				text: "I NEED A FUCKING MINUTE",
 				stepsForward: 1
 			},
@@ -34,7 +34,11 @@ export const IDEAS_LIST = [
 			},
 			{
 				text: "AND SO DO ALL THESE PEOPLE WITH FUCKING SAFETY PINS",
-				link: "https://www.good.is/articles/safety-pin-america-trump-brexit"			
+				link: "https://www.good.is/articles/safety-pin-america-trump-brexit"
+			},
+			{
+				text: "PROTECT YOUR FUCKING ONLINE IDENTITY",
+				stepsForward: 5
 			},
 			{
 				text: "OH BUT ONE MORE THING...",
@@ -66,6 +70,11 @@ export const IDEAS_LIST = [
 				topic: "women"
 			},
 			{
+				stepsForward: 3,
+				text: 'ONLINE GODDAMN SAFETY',
+				topic: 'onlineSafety'
+			},
+			{
 				text: "THE FUCKING EARTH IS GOING TO LITERALLY BE ON FUCKING FIRE",
 				topic: "earth"
 			}
@@ -95,9 +104,9 @@ export const IDEAS_LIST = [
 
 	{
 		text: "TELL YOUR FUCKING FRIENDS",
-		
+
 		buttons: [
-			{	
+			{
 				text: "FACEBOOK",
 				link: "https://www.facebook.com/sharer/sharer.php?u=http%3A//www.holyfucktheelection.com/"
 			},
@@ -107,8 +116,44 @@ export const IDEAS_LIST = [
 			}
 		]
 
-	}
+	},
 
+	{
+		pretext: "DAMN SMART.",
+		text: "CHECKOUT HOW YOU CAN PROTECT YOURSELF",
+
+		buttons: [
+			{
+				text: "BROWSE USING TOR",
+				link: "https://www.torproject.org/download/download-easy.html.en"
+			},
+			{
+				text: "INSTALL SIGNAL ON YOUR ANDROID PHONE",
+				link: "https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms"
+			},
+			{
+				text: "DOWNLOAD SIGNAL ON YOUR IPHONE",
+				link: "https://itunes.apple.com/us/app/signal-private-messenger/id874139669"
+			},
+			{
+				text: "SECURE YOUR BROWSER",
+				link: "https://www.eff.org/https-everywhere"
+			},
+			{
+				text: "USE FUCKING 2FA IN GMAIL",
+				link: "https://myaccount.google.com/intro/security"
+			},
+			{
+				text: "SETUP TAILS ON A FLASH DRIVE",
+				link: "https://tails.boum.org/"
+			},
+			{
+				text: "OH BUT ONE MORE THING...",
+				stepsForward: -1,
+				class: "idea-button--accent"
+			}
+		]
+	}
 ];
 
 export const IDEAS_COUNT = IDEAS_LIST.length;
