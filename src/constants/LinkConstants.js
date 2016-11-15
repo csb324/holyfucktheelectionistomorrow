@@ -240,10 +240,6 @@ export const LINKS_LIST = {
 			{
 				text: "COOL EARTH",
 				link: "https://www.coolearth.org/get-involved/donate/"
-			},
-			{
-				text: "SAFECAST",
-				link: "http://blog.safecast.org/donate/"
 			}
 		],
 		volunteer: [
