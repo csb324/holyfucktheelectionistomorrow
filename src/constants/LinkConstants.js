@@ -222,16 +222,20 @@ export const LINKS_LIST = {
 	earth: {
 		donate: [
 			{
+				text: "CLIMATE SCIENCE LEGAL DEFENSE FUND",
+				link: "http://climatesciencedefensefund.org/donate/monthly/"
+			},
+			{
+				text: "COOL EARTH",
+				link: "https://www.coolearth.org/get-involved/donate/"
+			},
+			{
 				text: "EARTHJUSTICE",
 				link: "https://secure.earthjustice.org/site/Donation2?df_id=10960&10960.donation=form1&_ga=1.146521844.1974926048.1478708236"
 			},
 			{
-				text: "THE SIERRA CLUB",
-				link: "https://vault.sierraclub.org/ways-to-give/"
-			},
-			{
-				text: "CLIMATE SCIENCE LEGAL DEFENSE FUND",
-				link: "http://climatesciencedefensefund.org/donate/monthly/"
+				text: "ENVIRONMENTAL PROGRESS",
+				link: "http://www.environmentalprogress.org/"
 			},
 			{
 				text: "LEAGUE OF CONSERVATION VOTERS",
@@ -242,14 +246,18 @@ export const LINKS_LIST = {
 				link: "https://secure.nrdconline.org/site/Donation2?df_id=15743&15743.donation=form1&_ga=1.264541580.203263383.1479235887"
 			},
 			{
-				text: "COOL EARTH",
-				link: "https://www.coolearth.org/get-involved/donate/"
+				text: "THE SIERRA CLUB",
+				link: "https://vault.sierraclub.org/ways-to-give/"
 			}
 		],
 		volunteer: [
 			{
 				text: "EARTHJUSTICE",
 				link: "http://earthjustice.org/action"
+			},
+			{
+				text: "ENVIRONMENTAL PROGRESS",
+				link: "http://www.environmentalprogress.org/campaigns/"
 			},
 			{
 				text: "NEXTGEN CLIMATE ACTION",
