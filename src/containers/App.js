@@ -24,12 +24,14 @@ export class App extends Component {
 
     if (choices.topic && choices.action) {
       currentLinks = links[choices.topic][choices.action];
-
-      currentLinks.push({
+      if (currentLinks[currentLinks.length - 1].text != "FUCK YEAH. NOW WHAT?") {
+        // Only push this link if it's not already in there.
+        currentLinks.push({
         text: "FUCK YEAH. NOW WHAT?",
         stepsForward: 1,
         class: "idea-button--accent"
       });
+      }
     }
 
     return (
