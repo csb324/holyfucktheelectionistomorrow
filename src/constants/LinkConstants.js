@@ -244,6 +244,10 @@ export const LINKS_LIST = {
 			{
 				text: "COOL EARTH",
 				link: "https://www.coolearth.org/get-involved/donate/"
+			},
+			{
+				text: "PAY MORE FOR CLEAN ENERGY",
+				link: "https://cleanenergy.fyi"
 			}
 		],
 		volunteer: [
