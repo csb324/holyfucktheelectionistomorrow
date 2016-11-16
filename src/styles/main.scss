@@ -15,13 +15,14 @@ $accent-orange: #ec6b2d;
 
 html {
   min-height: 100%;
+  height: 100vh;
 }
 
 body {
   background-color: $main-bg-color;
-  background: url("/static/sparkler.jpeg");
   background-attachment: fixed;
   background-size: cover;
+  -webkit-background-size: cover;
   color: $text-color;
 
   position: relative;
@@ -34,7 +35,6 @@ body {
   position: relative;
   padding: 0;
   margin: 0;
-
   overflow-x: hidden;
 
   &:before {
@@ -48,6 +48,7 @@ body {
     z-index: -1;
   }
 }
+
 
 a {
   cursor: pointer;
