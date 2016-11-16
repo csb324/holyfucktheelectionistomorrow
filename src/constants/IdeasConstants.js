@@ -4,7 +4,7 @@ export const IDEAS_LIST = [
 		text: "ARE YOU OKAY?",
 
 		buttons: [
-			{	
+			{
 				text: "I NEED A FUCKING MINUTE",
 				stepsForward: 1
 			},
@@ -34,12 +34,16 @@ export const IDEAS_LIST = [
 				link: "http://nymag.com/scienceofus/2016/09/journaling-can-help-you-out-of-a-bad-mood.html"
 			},
 			{
+				text: "MAKE SOME BAD FUCKING ART OR SOMETHING",
+				link: "https://makeamericacolorfulagain.com/trump_ebooks.pdf"
+			},
+			{
 				text: "REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS",
 				link: "https://www.buzzfeed.com/kelseyimpicciche/we-have-a-message-for-those-who-feel-alone?utm_term=.haK81DMVoa#.mcWMPKGd8V"
 			},
 			{
 				text: "AND SO DO ALL THESE PEOPLE WITH FUCKING SAFETY PINS",
-				link: "https://www.good.is/articles/safety-pin-america-trump-brexit"			
+				link: "https://www.good.is/articles/safety-pin-america-trump-brexit"
 			},
 			{
 				text: "OH BUT ONE MORE THING...",
@@ -101,7 +105,7 @@ export const IDEAS_LIST = [
 		text: "TELL YOUR FUCKING FRIENDS",
 		analyticsTag: 'share',
 		buttons: [
-			{	
+			{
 				text: "FACEBOOK",
 				link: "https://www.facebook.com/sharer/sharer.php?u=http%3A//www.holyfucktheelection.com/"
 			},
