@@ -20,7 +20,11 @@ export const LINKS_LIST = {
 			{
 				text: "EMILY'S LIST",
 				link: "https://secure.emilyslist.org/page/contribute/donate-to-emily"
-			}
+			},
+			{
+				text: "FOSTER CAMPBELL FOR US SENATE (LOUISIANA RUNOFF ELECTION DEC 10TH 2016)",
+				link: "https://secure.actblue.com/contribute/page/fostercampellforsenatedonate"
+			},
 		],
 		volunteer: [
 			{
@@ -34,6 +38,10 @@ export const LINKS_LIST = {
 			{
 				text: "DEMOCRATIC LEGISLATIVE CAMPAIGN COMMITTEE",
 				link: "http://www.dlcc.org/volunteer"
+			},
+			{
+				text: "FOSTER CAMPBELL FOR US SENATE (LOUISIANA RUNOFF ELECTION DEC 10TH 2016)",
+				link: "http://www.fostercampbell2016.com/volunteer/"
 			},
 			{
 				text: "WHOEVER IS RUNNING FOR SHIT IN YOUR STATE",
