@@ -18,6 +18,7 @@ export const IDEAS_LIST = [
 	{
 		pretext: "THAT'S FUCKING FAIR.",
 		text: "CHECK THIS SHIT OUT (AND COME BACK LATER IF YOU WANT)",
+		analyticsTag: 'selfcare',
 
 		buttons: [
 			{
@@ -27,6 +28,10 @@ export const IDEAS_LIST = [
 			{
 				text: "TAKE FUCKING CARE OF YOURSELF",
 				link: "https://www.wired.com/2016/11/critical-role-self-care-handling-post-election-stress/"
+			},
+			{
+				text: "PICK UP A FUCKING PENCIL AND WRITE THIS SHIT DOWN",
+				link: "http://nymag.com/scienceofus/2016/09/journaling-can-help-you-out-of-a-bad-mood.html"
 			},
 			{
 				text: "REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS",
@@ -81,7 +86,6 @@ export const IDEAS_LIST = [
 		]
 	},
 
-	// RE: MIDTERM ELECTIONS
 	{
 		pretext: "FUCK YEAH.",
 		text: "WHAT CAN YOU SPARE?",
@@ -104,7 +108,7 @@ export const IDEAS_LIST = [
 
 	{
 		text: "TELL YOUR FUCKING FRIENDS",
-
+		analyticsTag: 'share',
 		buttons: [
 			{
 				text: "FACEBOOK",

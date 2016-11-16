@@ -71,6 +71,10 @@ export const LINKS_LIST = {
 			{
 				text: "SILVIA RIVERA LAW PROJECT",
 				link: "http://srlp.org/srlp/?page=CiviCRM&q=civicrm/contribute/transact&reset=1&id=4"
+			},
+			{
+				text: "EVERYONE IS GAY",
+				link: "http://everyoneisgay.com/donate/"
 			}
 		],
 		volunteer: [
