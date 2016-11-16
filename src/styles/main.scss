@@ -20,6 +20,7 @@ html {
 
 body {
   background-color: $main-bg-color;
+  background: url("/static/sparkler.jpeg") no-repeat fixed center;
   background-attachment: fixed;
   background-size: cover;
   -webkit-background-size: cover;
