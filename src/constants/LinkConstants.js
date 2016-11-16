@@ -234,6 +234,10 @@ export const LINKS_LIST = {
 				link: "https://secure.earthjustice.org/site/Donation2?df_id=10960&10960.donation=form1&_ga=1.146521844.1974926048.1478708236"
 			},
 			{
+				text: "ENVIRONMENTAL PROGRESS",
+				link: "http://www.environmentalprogress.org/"
+			},
+			{
 				text: "LEAGUE OF CONSERVATION VOTERS",
 				link: "https://secure3.convio.net/lcv/site/Donation2?df_id=1741&1741.donation=form1"
 			},
@@ -250,6 +254,10 @@ export const LINKS_LIST = {
 			{
 				text: "EARTHJUSTICE",
 				link: "http://earthjustice.org/action"
+			},
+			{
+				text: "ENVIRONMENTAL PROGRESS",
+				link: "http://www.environmentalprogress.org/campaigns/"
 			},
 			{
 				text: "NEXTGEN CLIMATE ACTION",
