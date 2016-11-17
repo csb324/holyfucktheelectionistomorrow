@@ -77,6 +77,10 @@ export const IDEAS_LIST = [
 			{
 				text: "THE FUCKING EARTH IS GOING TO LITERALLY BE ON FUCKING FIRE",
 				topic: "earth"
+			},
+			{
+				text: "FACT-BASED FUCKING MEDIA AND THE WORLD VIEW",
+				topic: "facts"
 			}
 		]
 	},
