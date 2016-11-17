@@ -260,6 +260,33 @@ export const LINKS_LIST = {
 				link: "http://blog.safecast.org/volunteer/"
 			}
 		]
+	},
+  
+	facts: {
+		donate: [
+			{
+				text: "GAPMINDER FOUNDATION",
+				link: "https://www.gapminder.org/donations/"
+			},
+            {
+				text: "OUR WORLD IN DATA",
+				link: "https://ourworldindata.org/support/"
+			}
+		],
+		volunteer: [
+			{
+				text: "LEARN HOW U.S. HAS FUCKING PROGRESSED",
+				link: "http://www.gapminder.org/tools/#_chart-type=bubbles&state_entities_select@_geo=usa&trailStartTime=1800"
+			},
+            {
+				text: "STUDY OUR WORLD IN FUCKING DATA",
+				link: "https://ourworldindata.org/"
+			},
+            {
+				text: "SEE HOW PEOPLE ACTUALLY FUCKING LIVE",
+				link: "http://www.gapminder.org/dollar-street/matrix?thing=Families&countries=United%20States"
+			}
+		]
 	}
 
 };
