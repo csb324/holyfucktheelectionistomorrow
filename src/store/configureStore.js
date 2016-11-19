@@ -4,12 +4,9 @@
  * The code is envify'd - using 'DefinePlugin' in Webpack.
  */
 
-let loadedStore = null;
+// const env = (process.env.NODE_ENV === 'production') ? 'prod' : 'dev';
+// const loadedStore = require(`./configureStore.${env}`).default // eslint-disable-line
 
-if (process.env.NODE_ENV === 'production') {
-  loadedStore = require('./configureStore.prod');
-} else {
-  loadedStore = require('./configureStore.dev');
-}
+import loadedStore from './configureStore.prod';
 
-export const configureStore = loadedStore;
+export default loadedStore;

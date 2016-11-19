@@ -1,51 +1,47 @@
 // @import url(https://fonts.googleapis.com/css?family=Raleway:100,400);
 @import url('https://fonts.googleapis.com/css?family=Biryani:400,800,900');
 
-$main-bg-color: #000000;
-$text-color: #ffffff;
-$accent-blue: #00A9E0;
-$darker-blue: #0057B8;
-$accent-red: #E4002B;
-
+$main-bg-color: #000;
+$text-color: #fff;
+$accent-blue: #00a9e0;
+$darker-blue: #0057b8;
+$accent-red: #e4002b;
 
 $accent-gray: #e1e0dd;
 $accent-black: #35342f;
 $accent-orange: #ec6b2d;
 
+@mixin break {
+  @media screen and (min-width: 501px) {
+    @content;
+  }
+}
 
 html {
   min-height: 100%;
 }
 
 body {
-  background-color: $main-bg-color;
-  background: url("/static/sparkler.jpeg");
-  background-attachment: fixed;
-  background-size: cover;
-  color: $text-color;
+  position:        relative;
 
-  position: relative;
+  font-family:     'Biryani', sans-serif;
+  padding:         0;
+  margin:          0;
 
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-
-  font-family: 'Biryani', sans-serif;
-  position: relative;
-  padding: 0;
-  margin: 0;
-
-  overflow-x: hidden;
+  overflow-x:      hidden;
+  background:      url(/static/silkscreen.svg), $main-bg-color url("/static/sparkler-min.jpg") fixed;
+  background-size: 2px, cover;
+  color:           $text-color;
 
   &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    content:          "";
+    position:         absolute;
+    top:              0;
+    bottom:           0;
+    left:             0;
+    right:            0;
     background-color: rgba(#111, 0.3);
-    z-index: -1;
+    z-index:          -1;
   }
 }
 
@@ -54,128 +50,142 @@ a {
 }
 
 .main-app-container {
-  padding: 2em 1em 0;
-  max-width: 800px;
-  margin: 0 auto;
-  flex-wrap: wrap;
+  padding:    2em 1em 0;
+  max-width:  800px;
+  margin:     0 auto;
   min-height: 100vh;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
 }
 
 .main-app-nav {
   h1 {
-    font-weight: 900;
-    display: inline-block;
-    margin: 0;
-    margin-left: -0.4em;
+    font-weight:      900;
+    display:          inline-block;
+    margin:           0 0 0 -0.4em;
 
-    line-height: 1.3;
+    line-height:      1.3;
 
-    padding: 0.2em 0.4em 0;
+    padding:          0.2em 0.4em 0;
     background-color: $accent-blue;
   }
 
   .background-red {
     background-color: $accent-red;
-    margin-left: -0.2em;
+    margin-left:      -0.2em;
   }
+
   .background-dark {
     background-color: $main-bg-color;
   }
-}
 
+  @include break {
+    font-size: 1.3em;
+  }
+}
 
 .idea-container {
   padding-top: 2em;
 }
+
 .idea-intro {
   font-weight: 900;
 }
 
 .idea-text {
-  font-size: 2em;
-  font-weight: 900;
-  margin-top: 0;
-  line-height: 1.2;
+  font-size:     2em;
+  font-weight:   900;
+  margin-top:    0;
+  line-height:   1.2;
   margin-bottom: 0.6em;
+
+  @include break {
+    font-size: 3em;
+    outline:   none;
+  }
 }
 
 .idea-buttons {
   flex-wrap: wrap;
+
+  @include break {
+    display: flex;
+  }
 }
 
 %button {
-  font-family: 'Biryani', sans-serif;
-  padding: 0.7em 0.5em 0.5em;
-  font-size: 1.5em;
-  font-weight: 800;
-  line-height: 1.2;
+  font-family:     'Biryani', sans-serif;
+  padding:         0.7em 0.5em 0.5em;
+  font-size:       1.5em;
+  font-weight:     800;
+  line-height:     1.2;
   text-decoration: none;
-  text-align: center;
-  transition: 0.2s;
-  border-radius: 3px;
+  text-align:      center;
+  transition:      0.2s;
+  border-radius:   3px;
 }
 
 .idea-button {
-  flex: 1 0 40%;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   @extend %button;
 
+  flex:             1 0 40%;
+  border:           none;
+  display:          flex;
+  justify-content:  center;
+  align-items:      center;
+
   background-color: $darker-blue;
-  color: #fff;
-  margin-bottom: 1em;
+  color:            #fff;
+  margin-bottom:    1em;
 
   &:hover {
     background-color: $accent-blue;
+  }
+
+  @include break {
+    margin-right: 1em;
   }
 }
 
 .idea-button--accent {
   background-color: $accent-blue;
+
   &:hover {
-    color: $accent-blue;
+    color:            $accent-blue;
     background-color: #fff;
   }
 }
 
 .ideas-container {
   flex-grow: 1;
-  position: relative;
+  position:  relative;
 }
 
 // transition
 .slide-enter, .slide-leave {
-  transition: 1000ms;
-  width: 100%;
+  transition: left 1s;
+  width:      100%;
 }
+
 .slide-enter {
   position: relative;
-  left: 110vw;
+  left:     110%;
 }
+
 .slide-enter-active {
   left: 0;
 }
+
 .slide-leave {
   position: absolute;
-  left: 0;
-  top: 0;
+  left:     0;
+  top:      0;
 }
+
 .slide-leave-active {
-  left: -110vw;
+  left: -140%;
 }
-
-
-
-
 
 footer {
-  // text-align: center;
   padding-top: 8em;
   a {
     text-decoration: none;
@@ -185,12 +195,12 @@ footer {
 .start-over {
 
   button {
-    text-transform: uppercase;
-    display: inline-block;
-    border: none;
+    text-transform:   uppercase;
+    display:          inline-block;
+    border:           none;
     @extend %button;
     background-color: #111;
-    color: inherit;
+    color:            inherit;
 
     &:hover {
       background-color: #000;
@@ -202,34 +212,15 @@ footer {
 .credit {
   a {
     background-color: $accent-red;
-    display: inline-block;
-    padding: 0 0.3em;
-    line-height: 1.4;
-    color: #fff;
-    transition: 0.1s;
+    display:          inline-block;
+    padding:          0 0.3em;
+    line-height:      1.4;
+    color:            #fff;
+    transition:       0.1s;
+
     &:hover {
       background-color: #fff;
-      color: $darker-blue;
+      color:            $darker-blue;
     }
   }
-}
-
-@media screen and (min-width: 501px) {
-  .main-app-nav {
-    font-size: 1.3em;
-  }
-
-  .idea-text {
-    font-size: 3em;
-    outline: none;
-  }
-
-  .idea-buttons {
-    display: flex;
-  }
-
-  .idea-button {
-    margin-right: 1em;
-  }
-
 }

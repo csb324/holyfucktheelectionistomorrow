@@ -1,6 +1,13 @@
 {
+  "env": {
+    "browser": true
+  },
   "extends": "airbnb",
   "rules": {
-    "comma-dangle": 0
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": false}],
+    "react/forbid-prop-types": 0,
+    "jsx-a11y/anchor-has-content": 0
   }
 }

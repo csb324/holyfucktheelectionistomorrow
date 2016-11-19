@@ -10,21 +10,21 @@ export function incrementBy(number) {
   return {
     type: INCREMENT_BY,
     payload: number
-  }
+  };
 }
 
 export function setTopic(topic) {
   return {
     type: SET_TOPIC,
     payload: topic
-  }
+  };
 }
 
 export function setAction(action) {
   return {
     type: SET_ACTION,
     payload: action
-  }
+  };
 }
 
 
