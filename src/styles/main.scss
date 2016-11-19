@@ -118,6 +118,9 @@ a {
   text-align: center;
   transition: 0.2s;
   border-radius: 3px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .idea-button {

@@ -176,11 +176,15 @@ export const LINKS_LIST = {
 			{
 				text: "ACLU",
 				link: "https://action.aclu.org/secure/protect-rights-freedoms-we-believe-0"
+			},
+			{
+				text: "ELECTRONIC FRONTIER FOUNDATION",
+				link: "https://supporters.eff.org/donate/button"
 			}
 		],
 		volunteer: [
 			{
-				text: "TOR",
+				text: "TOR PROJECT",
 				link: "https://www.torproject.org/getinvolved/volunteer.html.en"
 			},
 			{

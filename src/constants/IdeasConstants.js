@@ -34,6 +34,10 @@ export const IDEAS_LIST = [
 				link: "http://nymag.com/scienceofus/2016/09/journaling-can-help-you-out-of-a-bad-mood.html"
 			},
 			{
+				text: "MAKE SOME BAD FUCKING ART OR SOMETHING",
+				link: "https://makeamericacolorfulagain.com/trump_ebooks.pdf"
+			},
+			{
 				text: "REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS",
 				link: "https://www.buzzfeed.com/kelseyimpicciche/we-have-a-message-for-those-who-feel-alone?utm_term=.haK81DMVoa#.mcWMPKGd8V"
 			},
