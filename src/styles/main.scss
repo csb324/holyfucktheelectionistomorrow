@@ -36,12 +36,13 @@ body {
                        url("../../static/sparkler-min.jpg");
   background-position: left top, center;
   background-repeat:   repeat, no-repeat;
-  background-size:     2px, cover;
+  background-size:     3px, cover;
   color:               $text-color;
 }
 
 a {
   cursor: pointer;
+  color:  inherit;
 }
 
 .wrap {
@@ -49,7 +50,7 @@ a {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 820px;
   margin:    0 auto;
   padding:   2em 1em 0;
 }
@@ -113,13 +114,14 @@ a {
 }
 
 %button {
-  transition:      0.2s;
+  transition:      background-color 0.2s, color 0.2s;
 
   border-radius:   3px;
   padding:         0.7em 0.5em 0.5em;
   font:            800 1.5em/1.2 'Biryani', sans-serif;
   text-decoration: none;
   text-align:      center;
+  cursor:          pointer;
 }
 
 .idea-button {
@@ -137,8 +139,11 @@ a {
   }
 
   @include break {
-    flex:         1 0 40%;
-    margin-right: 1em;
+    flex: 1 0 45%;
+
+    &:nth-child(even) {
+      margin-left: 1em;
+    }
   }
 }
 
@@ -155,7 +160,7 @@ a {
 .slide-enter, .slide-leave {
   transition: transform 1s, opacity 0.75s;
 
-  opacity: 0;
+  opacity:    0;
 }
 
 .slide-enter {
@@ -164,8 +169,8 @@ a {
 
 .slide-enter-active {
   transition-delay: 0s, 0.25s;
-  transform: translateX(0);
-  opacity: 1;
+  transform:        translateX(0);
+  opacity:          1;
 }
 
 .slide-leave {
@@ -174,7 +179,7 @@ a {
 
 .slide-leave-active {
   transform: translateX(-50%);
-  top: 0;
+  top:       0;
 }
 
 footer {
@@ -203,12 +208,13 @@ footer {
 
 .credit {
   a {
+    transition:       background-color 0.1s, color 0.1s;
+
     background-color: $accent-red;
     display:          inline-block;
     padding:          0 0.3em;
     line-height:      1.4;
     color:            #fff;
-    transition:       0.1s;
 
     &:hover {
       background-color: #fff;
