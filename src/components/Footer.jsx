@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const Footer = ({ actions }) => (
-  <footer>
+  <footer className="container">
     <p className="start-over">
       <button onClick={actions.restart}>Start over</button>
     </p>

@@ -74,7 +74,7 @@ export default class Idea extends Component {
     }
 
     return (
-      <div className="idea-container">
+      <div className="container">
         <p className="idea-intro">{ pretext }</p>
         <div className="idea-text" tabIndex="-1">{ text }</div>
 
