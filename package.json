@@ -10,9 +10,7 @@
     "assets": "copy index.html dist && copy static/* dist && copy favicon.ico dist",
     "dev": "NODE_ENV=development npm start",
     "start": "node devServer.js",
-    "lint": "eslint src --ext .js --ext .jsx",
-    "stats": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --json | webpack-bundle-size-analyzer",
-    "start:prod": "npm run build:static && pushstate-server dist"
+    "lint": "eslint src --ext .js --ext .jsx"
   },
   "repository": {
     "type": "git",
@@ -53,6 +51,7 @@
   },
   "dependencies": {
     "copy": "^0.3.0",
+    "file-loader": "^0.9.0",
     "preact": "^6.4.0",
     "preact-compat": "^3.9.2",
     "rc-animate": "^2.3.1",
@@ -61,6 +60,8 @@
     "react-dom": "^15.4.0",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "svgo-loader": "^1.1.2",
+    "url-loader": "^0.5.7"
   }
 }
