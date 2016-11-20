@@ -30,7 +30,6 @@ body {
   height:              100%;
   padding:             0;
   margin:              0;
-  overflow-x:          hidden;
   font-family:         'Biryani', sans-serif;
   background-color:    rgba(#111, 0.3);
   background-image:    url('../../static/silkscreen.svg'),
@@ -45,7 +44,7 @@ a {
   cursor: pointer;
 }
 
-#root {
+.wrap {
   min-height: 100vh;
 }
 
@@ -82,7 +81,9 @@ a {
 }
 
 .ideas-container {
-  position: relative;
+  position:   relative;
+  width:      100vw;
+  overflow-x: hidden;
 }
 
 .idea-intro {
@@ -152,26 +153,28 @@ a {
 
 // transition
 .slide-enter, .slide-leave {
-  transition: left 1s;
+  transition: transform 1s, opacity 0.75s;
+
+  opacity: 0;
 }
 
 .slide-enter {
-  position: relative;
-  left:     110%;
+  transform: translateX(50%);
 }
 
 .slide-enter-active {
-  left: 0;
+  transition-delay: 0s, 0.25s;
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .slide-leave {
   position: absolute;
-  left:     0;
-  top:      0;
 }
 
 .slide-leave-active {
-  left: -110%;
+  transform: translateX(-50%);
+  top: 0;
 }
 
 footer {
