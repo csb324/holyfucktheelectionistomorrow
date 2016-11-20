@@ -1,15 +1,16 @@
-const path = require('path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+const path              = require('path');
+const webpack           = require('webpack');
+const autoprefixer      = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
+  entry:   [
     './src/index.jsx'
   ],
-  output: {
-    path: path.join(__dirname, 'dist', 'static'),
-    filename: 'bundle.js',
+  output:  {
+    path:       path.join(__dirname, 'dist', 'static'),
+    filename:   'bundle.js',
     publicPath: '/static/'
   },
   plugins: [
@@ -24,19 +25,21 @@ module.exports = {
      */
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
-    })
+    }),
+
+    new ExtractTextPlugin('styles.css')
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      'react': 'preact-compat',
+    alias:      {
+      'react':     'preact-compat',
       'react-dom': 'preact-compat'
     }
   },
-  module: {
+  module:  {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test:    /\.jsx?$/,
         loaders: ['babel-loader'],
         include: [
           path.join(__dirname, 'src'),
@@ -44,18 +47,25 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|jpeg|png)$/,
+        test:    /\.(jpg|jpeg|png)$/,
         loaders: [
           'file-loader?name=[name].[hash].[ext]'
         ],
         include: path.join(__dirname, 'static')
       },
       {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!postcss-loader!sass-loader'
+        test:   /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader:         [
+            {loader: 'css-loader'},
+            {loader: 'postcss-loader'},
+            {loader: 'sass-loader'}
+          ]
+        })
       },
       {
-        test: /\.svg$/,
+        test:   /\.svg$/,
         loader: 'url-loader?limit=8192!svgo-loader'
       }
     ]

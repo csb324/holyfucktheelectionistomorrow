@@ -17,45 +17,40 @@ $accent-orange: #ec6b2d;
   }
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 html {
-  min-height: 100%;
+  box-sizing: border-box;
   background: $main-bg-color;
 }
 
 body {
-  position:        relative;
-
-  font-family:     'Biryani', sans-serif;
-  padding:         0;
-  margin:          0;
-
-  overflow-x:      hidden;
-  background:      url('../../static/silkscreen.svg'), url("../../static/sparkler-min.jpg") center fixed;
-  background-size: 2px, cover;
-  color:           $text-color;
-
-  &:before {
-    content:          "";
-    position:         absolute;
-    top:              0;
-    bottom:           0;
-    left:             0;
-    right:            0;
-    background-color: rgba(#111, 0.3);
-    z-index:          -1;
-  }
+  height:                100vh;
+  padding:               0;
+  margin:                0;
+  overflow-x:            hidden;
+  font-family:           'Biryani', sans-serif;
+  background-color:      rgba(#111, 0.3);
+  background-image:      url('../../static/silkscreen.svg'),
+                         url("../../static/sparkler-min.jpg");
+  background-position:   left top, center;
+  background-repeat:     repeat, no-repeat;
+  background-size:       2px, cover;
+  color:                 $text-color;
 }
 
 a {
   cursor: pointer;
 }
 
-.main-app-container {
+//.main-app-container {
+#root {
   padding:    2em 1em 0;
   max-width:  800px;
   margin:     0 auto;
   min-height: 100vh;
-  box-sizing: border-box;
 }
 
 .main-app-nav {
@@ -93,56 +88,50 @@ a {
 }
 
 .idea-text {
-  font-size:     2em;
-  font-weight:   900;
-  margin-top:    0;
-  line-height:   1.2;
-  margin-bottom: 0.6em;
+  margin:      0 0 0.6em;
+  font-size:   2em;
+  font-weight: 900;
+  line-height: 1.2;
+  outline:     none;
 
   @include break {
     font-size: 3em;
-    outline:   none;
   }
 }
 
 .idea-buttons {
+  display:   flex;
   flex-wrap: wrap;
-
-  @include break {
-    display: flex;
-  }
 }
 
 %button {
-  font-family:     'Biryani', sans-serif;
+  transition:      0.2s;
+
+  border-radius:   3px;
   padding:         0.7em 0.5em 0.5em;
-  font-size:       1.5em;
-  font-weight:     800;
-  line-height:     1.2;
+  font:            800 1.5em/1.2 'Biryani', sans-serif;
   text-decoration: none;
   text-align:      center;
-  transition:      0.2s;
-  border-radius:   3px;
 }
 
 .idea-button {
   @extend %button;
 
-  flex:             1 0 40%;
-  border:           none;
-  display:          flex;
-  justify-content:  center;
-  align-items:      center;
+                    //display:          flex;
+                    //justify-content:  center;
+                    //align-items:      center;
 
+  margin-bottom:    1em;
+  border:           none;
   background-color: $darker-blue;
   color:            #fff;
-  margin-bottom:    1em;
 
   &:hover {
     background-color: $accent-blue;
   }
 
   @include break {
+    flex:         1 0 40%;
     margin-right: 1em;
   }
 }
@@ -194,12 +183,12 @@ footer {
 }
 
 .start-over {
-
   button {
-    text-transform:   uppercase;
+    @extend %button;
+
     display:          inline-block;
     border:           none;
-    @extend %button;
+    text-transform:   uppercase;
     background-color: #111;
     color:            inherit;
 

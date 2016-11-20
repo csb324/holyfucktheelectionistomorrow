@@ -46,8 +46,19 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       {
+        test: /\.(jpg|jpeg|png)$/,
+        loaders: [
+          'file-loader?name=[name].[hash].[ext]'
+        ],
+        include: path.join(__dirname, 'static')
+      },
+      {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
+      },
+      {
+        test: /\.svg$/,
+        loader: 'url-loader?limit=8192!svgo-loader'
       }
     ]
   }

@@ -36,6 +36,7 @@
     "eslint-plugin-react": "^6.7.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "node-sass": "^3.13.0",
     "postcss-loader": "^1.1.0",
     "redux-devtools": "^3.0.1",
