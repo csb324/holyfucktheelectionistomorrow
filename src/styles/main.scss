@@ -26,7 +26,9 @@ html {
 }
 
 body {
-  height:              100vh;
+  overflow-x:          hidden;
+  overflow-y:          scroll;
+  height:              100%;
   padding:             0;
   margin:              0;
   font-family:         'Biryani', sans-serif;
@@ -44,19 +46,22 @@ a {
   color:  inherit;
 }
 
-.wrap {
-  height:     100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
 .container {
   max-width: 820px;
   margin:    0 auto;
   padding:   2em 1em 0;
 }
 
-.main-app-nav {
+.main {
+  display:        flex;
+  flex-direction: column;
+
+  min-height:     100vh;
+}
+
+.main__header {
+  flex: 0 0 auto;
+
   h1 {
     font-weight:      900;
     display:          inline-block;
@@ -82,10 +87,12 @@ a {
   }
 }
 
-.ideas-container {
+.main__ideas {
+  flex:             1;
+
   position:   relative;
-  width:      100vw;
-  overflow-x: hidden;
+  //width:      100vw;
+  //overflow-x: hidden;
 }
 
 .idea-intro {
@@ -183,28 +190,27 @@ a {
   top:       0;
 }
 
-footer {
-  padding-top: 8em;
+.main__footer {
+  flex: 0 0 auto;
+        //padding-top: 8em;
+
   a {
     text-decoration: none;
   }
 }
 
 .start-over {
-  button {
-    @extend %button;
+  @extend %button;
 
-    display:          inline-block;
-    border:           none;
-    text-transform:   uppercase;
-    background-color: #111;
-    color:            inherit;
+  display:          inline-block;
+  border:           none;
+  text-transform:   uppercase;
+  background-color: #111;
+  color:            inherit;
 
-    &:hover {
-      background-color: #000;
-    }
+  &:hover {
+    background-color: #000;
   }
-
 }
 
 .credit {

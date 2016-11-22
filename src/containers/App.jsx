@@ -1,65 +1,56 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Animate from 'rc-animate';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions/Actions';
 
 import Idea from '../components/Idea';
-import Footer from '../components/Footer';
-
-const onHeaderClick = (action) => (event) => {
-  event.preventDefault();
-
-  action();
-};
 
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
  * Again, this is because it serves to wrap the rest of our application with the Provider
  * component to make the Redux store available to the rest of the app.
  */
-const App = ({ counter, actions, ideas, choices, links }) => {
-  const currentIdea = ideas[counter];
-
-  let currentLinks = [];
-
-  if (choices.topic && choices.action) {
-    currentLinks = links[choices.topic][choices.action];
-
-    currentLinks.push({
-      text: 'FUCK YEAH. NOW WHAT?',
-      stepsForward: 1,
-      class: 'idea-button--accent'
-    });
+class App extends Component {
+  componentDidMount () {
+    // Ghetto router: capture clicks on elements with data-restart
+    [...document.querySelectorAll('[data-restart]')].forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.props.actions.restart();
+      })
+    })
   }
 
-  return (
-    <div className="wrap">
-      <div className="container">
-        <div className="main-app-nav">
-          <a href="/" onClick={onHeaderClick(actions.restart)}>
-            <h1 className="background-dark">HOLY FUCK.</h1>
-            <h1 className="background-red">NOW WHAT?</h1>
-          </a>
-          <p>That piece of shit known as Donald Trump won the election. But that doesn't mean it's
-            fucking over</p>
-        </div>
-      </div>
-      <div className="ideas-container">
-        <Animate component="div" transitionName="slide">
-          <Idea
-            key={`key-${counter}`}
-            idea={currentIdea}
-            actions={actions}
-            links={currentLinks}
-            choices={choices}
-          />
-        </Animate>
-      </div>
-      <Footer actions={actions} />
-    </div>
-  );
-};
+  render () {
+    const { counter, actions, ideas, choices, links } = this.props
+    const currentIdea = ideas[counter];
+
+    let currentLinks = [];
+
+    if (choices.topic && choices.action) {
+      currentLinks = links[choices.topic][choices.action];
+
+      currentLinks.push({
+        text:         'FUCK YEAH. NOW WHAT?',
+        stepsForward: 1,
+        class:        'idea-button--accent'
+      });
+    }
+
+    return (
+      <Animate component="div" transitionName="slide">
+        <Idea
+          key={`key-${counter}`}
+          idea={currentIdea}
+          actions={actions}
+          links={currentLinks}
+          choices={choices}
+        />
+      </Animate>
+    );
+  };
+}
 
 App.propTypes = {
   counter: PropTypes.number.isRequired,
