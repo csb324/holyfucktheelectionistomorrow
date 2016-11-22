@@ -70,6 +70,7 @@
     "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "^15.4.0",
     "react-redux": "^4.4.6",
+    "react-router": "^4.0.0-alpha.6",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "svgo-loader": "^1.1.2",
