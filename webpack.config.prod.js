@@ -1,7 +1,10 @@
-const path              = require('path');
-const webpack           = require('webpack');
-const autoprefixer      = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path                          = require('path');
+const webpack                       = require('webpack');
+const autoprefixer                  = require('autoprefixer');
+const ExtractTextPlugin             = require('extract-text-webpack-plugin');
+const OfflinePlugin                 = require('offline-plugin');
+const HtmlWebpackPlugin             = require('html-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -9,9 +12,8 @@ module.exports = {
     './src/index.jsx'
   ],
   output:  {
-    path:       path.join(__dirname, 'dist', 'static'),
-    filename:   'bundle.js',
-    publicPath: '/static/'
+    path:     path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   plugins: [
     /**
@@ -27,7 +29,27 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
 
-    new ExtractTextPlugin('styles.css')
+    new LodashModuleReplacementPlugin(),
+
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug:    false
+    }),
+
+    new ExtractTextPlugin('styles.css'),
+
+    new HtmlWebpackPlugin({
+      production: true,
+      template:   './src/index.html'
+    }),
+
+    /**
+     * Add a service worker
+     */
+    new OfflinePlugin({
+      ServiceWorker: {events: true},
+      AppCache:      false
+    })
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -49,7 +71,7 @@ module.exports = {
       {
         test:    /\.(jpg|jpeg|png)$/,
         loaders: [
-          'file-loader?name=[name].[hash].[ext]'
+          'file-loader?name=static/[name].[hash].[ext]'
         ],
         include: path.join(__dirname, 'static')
       },

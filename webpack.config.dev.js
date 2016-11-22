@@ -1,17 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
+const path              = require('path');
+const webpack           = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [
+  entry:   [
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client',
     './src/index.jsx'
   ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+  output:  {
+    path:     path.join(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
   plugins: [
     /**
@@ -33,6 +33,10 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
+
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -41,27 +45,27 @@ module.exports = {
       'react-dom': 'preact-compat'
     }
   },
-  module: {
+  module:  {
     loaders: [
       {
-        test: /\.jsx?/,
+        test:    /\.jsx?/,
         exclude: [/node_modules/, /styles/],
         loaders: ['babel-loader'],
         include: path.join(__dirname, 'src')
       },
       {
-        test: /\.(jpg|jpeg|png)$/,
+        test:    /\.(jpg|jpeg|png)$/,
         loaders: [
-          'file-loader?name=[name].[hash].[ext]'
+          'file-loader?name=static/[name].[hash].[ext]'
         ],
         include: path.join(__dirname, 'static')
       },
       {
-        test: /\.scss$/,
+        test:   /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
       },
       {
-        test: /\.svg$/,
+        test:   /\.svg$/,
         loader: 'url-loader?limit=8192!svgo-loader'
       }
     ]

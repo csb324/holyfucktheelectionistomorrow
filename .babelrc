@@ -1,14 +1,11 @@
 {
-  "presets": ["react", "latest"],
+  "presets": ["react", ["latest", { "modules": false }]],
   "env": {
     "development": {
       "presets": ["react-hmre"]
     },
     "production": {
-      "presets": [
-        "react",
-        ["latest", { "modules": false }]
-      ]
+      "plugins": ["lodash"]
     }
   }
 }
