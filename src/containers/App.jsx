@@ -13,7 +13,6 @@ const onHeaderClick = (action) => (event) => {
   action();
 };
 
-
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
  * Again, this is because it serves to wrap the rest of our application with the Provider
@@ -39,8 +38,7 @@ const App = ({ counter, actions, ideas, choices, links }) => {
       <div className="container">
         <div className="main-app-nav">
           <a href="/" onClick={onHeaderClick(actions.restart)}>
-            <h1 className="background-dark">HOLY</h1>
-            <h1 className="background-dark">FUCK.</h1>
+            <h1 className="background-dark">HOLY FUCK.</h1>
             <h1 className="background-red">NOW WHAT?</h1>
           </a>
           <p>That piece of shit known as Donald Trump won the election. But that doesn't mean it's

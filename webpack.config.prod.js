@@ -40,6 +40,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       production: true,
+      inject:     false,
       template:   './src/index.html'
     }),
 
