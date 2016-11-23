@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "webpack": "cross-env NODE_ENV=production webpack -p --config webpack.config.prod.js",
-    "assets": "copy static/* dist && copy favicon.ico dist",
+    "assets": "copy static/* dist && copy favicon.ico dist && copy CNAME dist",
     "build": "run-s clean webpack assets",
     "start": "node devServer.js",
     "lint:js": "eslint src --ext .js --ext .jsx",
