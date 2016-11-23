@@ -6,13 +6,18 @@ import * as Actions from '../actions/Actions';
 
 import Idea from '../components/Idea';
 
+let initialised = false;
+
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
  * Again, this is because it serves to wrap the rest of our application with the Provider
  * component to make the Redux store available to the rest of the app.
  */
 class App extends Component {
-  componentDidMount () {
+  componentDidMount() {
+    // Render hasn't been called yet
+    initialised = true;
+
     // Ghetto router: call actions.restart in response clicks on elements with data-restart attr
     // Means that we can render all the unchanging stuff - header & footer - to static html and
     // control the React-y part (the ideas) from vanilla links
@@ -20,12 +25,16 @@ class App extends Component {
       el.addEventListener('click', (e) => {
         e.preventDefault();
         this.props.actions.restart();
-      })
-    })
+      });
+    });
   }
 
-  render () {
-    const { counter, actions, ideas, choices, links } = this.props
+  shouldComponentUpdate() {
+    return initialised;
+  }
+
+  render() {
+    const { counter, actions, ideas, choices, links } = this.props;
     const currentIdea = ideas[counter];
 
     let currentLinks = [];
