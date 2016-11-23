@@ -13,7 +13,9 @@ import Idea from '../components/Idea';
  */
 class App extends Component {
   componentDidMount () {
-    // Ghetto router: capture clicks on elements with data-restart
+    // Ghetto router: call actions.restart in response clicks on elements with data-restart attr
+    // Means that we can render all the unchanging stuff - header & footer - to static html and
+    // control the React-y part (the ideas) from vanilla links
     [...document.querySelectorAll('[data-restart]')].forEach((el) => {
       el.addEventListener('click', (e) => {
         e.preventDefault();

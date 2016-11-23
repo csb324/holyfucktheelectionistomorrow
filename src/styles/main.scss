@@ -16,6 +16,17 @@ $accent-orange: #ec6b2d;
   }
 }
 
+%button {
+  transition:      background-color 0.2s, color 0.2s;
+
+  border-radius:   3px;
+  padding:         0.7em 0.5em 0.5em;
+  font:            800 1.5em/1.2 'Biryani', sans-serif;
+  text-decoration: none;
+  text-align:      center;
+  cursor:          pointer;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -26,24 +37,24 @@ html {
 }
 
 body {
-  overflow-x:          hidden;
-  overflow-y:          scroll;
-  height:              100%;
+  position:            relative;
+  height:              100vh;
   padding:             0;
   margin:              0;
   font-family:         'Biryani', sans-serif;
-  background-color:    rgba(#111, 0.3);
   background-image:    url("../../static/silkscreen.svg"),
+                       linear-gradient(to left, rgba(black, 0.75), transparent, rgba(black, 0.75)),
                        url("../../static/sparkler-min.jpg");
-  background-position: left top, center;
-  background-repeat:   repeat, no-repeat;
-  background-size:     3px, cover;
+  background-position: left top, center, center top;
+  background-repeat:   repeat, no-repeat, no-repeat;
+  background-size:     3px, cover, cover;
   color:               $text-color;
 }
 
 a {
-  cursor: pointer;
-  color:  inherit;
+  cursor:          pointer;
+  color:           inherit;
+  text-decoration: none;
 }
 
 .container {
@@ -52,14 +63,21 @@ a {
   padding:   2em 1em 0;
 }
 
-.main {
+.app {
   display:        flex;
   flex-direction: column;
 
-  min-height:     100vh;
+  will-change:    scroll;
+  position:       absolute;
+  overflow-x:     hidden;
+  overflow-y:     scroll;
+  width:          100vw;
+  height:         100vh;
 }
 
-.main__header {
+// Header
+//------------------------------------------
+.app__header {
   flex: 0 0 auto;
 
   h1 {
@@ -87,12 +105,12 @@ a {
   }
 }
 
-.main__ideas {
-  flex:             1;
+// Ideas
+//------------------------------------------
+.app__ideas {
+  flex:     1;
 
-  position:   relative;
-  //width:      100vw;
-  //overflow-x: hidden;
+  position: relative;
 }
 
 .idea-intro {
@@ -119,17 +137,6 @@ a {
     flex-direction: row;
     flex-wrap:      wrap;
   }
-}
-
-%button {
-  transition:      background-color 0.2s, color 0.2s;
-
-  border-radius:   3px;
-  padding:         0.7em 0.5em 0.5em;
-  font:            800 1.5em/1.2 'Biryani', sans-serif;
-  text-decoration: none;
-  text-align:      center;
-  cursor:          pointer;
 }
 
 .idea-button {
@@ -183,20 +190,17 @@ a {
 
 .slide-leave {
   position: absolute;
+  top:      0;
 }
 
 .slide-leave-active {
   transform: translateX(-50%);
-  top:       0;
 }
 
-.main__footer {
+// Footer
+//------------------------------------------
+.app__footer {
   flex: 0 0 auto;
-        //padding-top: 8em;
-
-  a {
-    text-decoration: none;
-  }
 }
 
 .start-over {
@@ -214,18 +218,16 @@ a {
 }
 
 .credit {
-  a {
-    transition:       background-color 0.1s, color 0.1s;
+  transition:       background-color 0.1s, color 0.1s;
 
-    background-color: $accent-red;
-    display:          inline-block;
-    padding:          0 0.3em;
-    line-height:      1.4;
-    color:            #fff;
+  background-color: $accent-red;
+  display:          inline-block;
+  padding:          0 0.3em;
+  line-height:      1.4;
+  color:            #fff;
 
-    &:hover {
-      background-color: #fff;
-      color:            $darker-blue;
-    }
+  &:hover {
+    background-color: #fff;
+    color:            $darker-blue;
   }
 }
