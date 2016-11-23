@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Biryani:400,800,900');
-
 $main-bg-color: #000;
 $text-color: #fff;
 $accent-blue: #00a9e0;
@@ -27,6 +25,10 @@ $accent-orange: #ec6b2d;
   cursor:          pointer;
 }
 
+
+/**
+ * Fonts are now loaded via a link element
+ */
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -64,32 +66,32 @@ a {
 }
 
 .app {
-  display:        flex;
-  flex-direction: column;
+  position:                   absolute;
+  top:                        0;
+  left:                       0;
+  width:                      100vw;
+  height:                     100vh;
 
-  will-change:    scroll;
-  position:       absolute;
-  overflow-x:     hidden;
-  overflow-y:     scroll;
-  width:          100vw;
-  height:         100vh;
+  will-change:                scroll;
+  overflow-x:                 hidden;
+  overflow-y:                 scroll;
 
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; // Required for momentum scrolling on iOS
 }
 
 // Header
 //------------------------------------------
 .app__header {
-  flex: 0 0 auto;
+  @include break {
+    font-size: 1.3em;
+  }
 
   h1 {
-    font-weight:      900;
     display:          inline-block;
     margin:           0 0 0 -0.4em;
-
-    line-height:      1.3;
-
     padding:          0.2em 0.4em 0;
+    line-height:      1.3;
+    font-weight:      900;
     background-color: $accent-blue;
   }
 
@@ -101,17 +103,11 @@ a {
   .background-dark {
     background-color: $main-bg-color;
   }
-
-  @include break {
-    font-size: 1.3em;
-  }
 }
 
 // Ideas
 //------------------------------------------
 .app__ideas {
-  flex:     1;
-
   position: relative;
 }
 
@@ -202,7 +198,7 @@ a {
 // Footer
 //------------------------------------------
 .app__footer {
-  flex: 0 0 auto;
+
 }
 
 .start-over {
