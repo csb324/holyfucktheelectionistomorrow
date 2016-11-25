@@ -6,6 +6,9 @@
     },
     "production": {
       "plugins": ["lodash"]
+    },
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
     }
   }
 }

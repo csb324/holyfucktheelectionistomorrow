@@ -43,9 +43,9 @@ class App extends Component {
       currentLinks = links[choices.topic][choices.action];
 
       currentLinks.push({
-        text:         'FUCK YEAH. NOW WHAT?',
+        text: 'FUCK YEAH. NOW WHAT?',
         stepsForward: 1,
-        class:        'idea-button--accent'
+        class: 'idea-button--accent'
       });
     }
 
@@ -60,7 +60,7 @@ class App extends Component {
         />
       </Animate>
     );
-  };
+  }
 }
 
 App.propTypes = {

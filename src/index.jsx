@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
 /**
  * Import the stylesheet you want used! Here we just reference
  * the main SCSS file we have in the styles directory.
@@ -11,12 +13,14 @@ import './styles/main.scss';
  * See configureStore.js and Root.js for more details.
  */
 import configureStore from './store/configureStore';
-import Root from './containers/Root';
+import App from './containers/App';
 
 const store = configureStore();
 
 ReactDOM.render(
-  <Root store={store} />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 

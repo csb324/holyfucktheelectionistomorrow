@@ -2,7 +2,7 @@ import { RESTART_COUNTER, INCREMENT_BY, SET_TOPIC, SET_ACTION } from '../constan
 import { IDEAS_COUNT } from '../constants/IdeasConstants';
 
 // this prevents the counter getting somehow ahead of the actual list of ideas
-function addToCounter(count, int) {
+export function addToCounter(count, int) {
   return Math.min(count + int, IDEAS_COUNT - 1);
 }
 

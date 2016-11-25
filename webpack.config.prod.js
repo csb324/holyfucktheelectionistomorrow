@@ -1,9 +1,9 @@
-const path                          = require('path');
-const webpack                       = require('webpack');
-const autoprefixer                  = require('autoprefixer');
-const ExtractTextPlugin             = require('extract-text-webpack-plugin');
-const OfflinePlugin                 = require('offline-plugin');
-const HtmlWebpackPlugin             = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const OfflinePlugin = require('offline-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {

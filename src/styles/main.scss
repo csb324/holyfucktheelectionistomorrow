@@ -170,8 +170,11 @@ a {
 }
 
 // transition
-.slide-enter, .slide-leave {
+.slide-enter,
+.slide-leave {
   transition: transform 1s, opacity 0.75s;
+
+  will-change: transform, opacity;
 
   opacity:    0;
 }
