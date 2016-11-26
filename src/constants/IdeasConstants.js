@@ -9,7 +9,7 @@ export const IDEAS_LIST = [
         stepsForward: 1
       },
       {
-        text: "I'M READY TO FUCK SHIT UP",
+        text: "I'M READY TO FUCK SHIT UP!",
         stepsForward: 2
       }
     ]
