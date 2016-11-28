@@ -1,22 +1,39 @@
 import React, { Component, PropTypes } from 'react';
+import Animate from 'rc-animate';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions/Actions';
 
 import Idea from '../components/Idea';
-import Footer from '../components/Footer';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
-
+let initialised = false;
 
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
  * Again, this is because it serves to wrap the rest of our application with the Provider
  * component to make the Redux store available to the rest of the app.
  */
-export class App extends Component {
+class App extends Component {
+  componentDidMount() {
+    // Render hasn't been called yet
+    initialised = true;
+
+    // Ghetto router: call actions.restart in response clicks on elements with data-restart attr
+    // Means that we can render all the unchanging stuff - header & footer - to static html and
+    // control the React-y part (the ideas) from vanilla links
+    [...document.querySelectorAll('[data-restart]')].forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.props.actions.restart();
+      });
+    });
+  }
+
+  shouldComponentUpdate() {
+    return initialised;
+  }
+
   render() {
-    // we can use ES6's object destructuring to effectively 'unpack' our props
     const { counter, actions, ideas, choices, links } = this.props;
     const currentIdea = ideas[counter];
 
@@ -26,34 +43,22 @@ export class App extends Component {
       currentLinks = links[choices.topic][choices.action];
 
       currentLinks.push({
-        text: "FUCK YEAH. NOW WHAT?",
+        text: 'FUCK YEAH. NOW WHAT?',
         stepsForward: 1,
-        class: "idea-button--accent"
+        class: 'idea-button--accent'
       });
     }
 
     return (
-      <div className="main-app-container">
-        <div className="main-app-nav">
-          <h1 className="background-dark">HOLY</h1>
-          <h1 className="background-dark">FUCK.</h1>
-
-          <h1 className="background-red">NOW WHAT?</h1>
-
-          <p>That piece of shit known as Donald Trump won the election. But that doesn't mean it's fucking over.</p>
-        </div>
-        {/* notice that we then pass those unpacked props into the Counter component */}
-        <div className="ideas-container">
-          <ReactCSSTransitionGroup
-            transitionName="slide"
-            transitionEnterTimeout={1000}
-            transitionLeaveTimeout={1000} >
-
-            <Idea key={counter} idea={currentIdea} actions={actions} links={currentLinks} choices={choices} />
-          </ReactCSSTransitionGroup>
-        </div>
-        <Footer actions={actions} />
-      </div>
+      <Animate component="div" transitionName="slide">
+        <Idea
+          key={`key-${counter}`}
+          idea={currentIdea}
+          actions={actions}
+          links={currentLinks}
+          choices={choices}
+        />
+      </Animate>
     );
   }
 }

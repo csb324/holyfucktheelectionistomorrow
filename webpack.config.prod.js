@@ -1,16 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const OfflinePlugin = require('offline-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    './src/index'
+  entry:   [
+    './src/index.jsx'
   ],
-  output: {
-    path: path.join(__dirname, 'dist', 'static'),
+  output:  {
+    path:     path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
   },
   plugins: [
     /**
@@ -18,34 +21,75 @@ module.exports = {
      * means is that frequently used IDs will get lower/shorter IDs - so they become
      * more predictable.
      */
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     /**
      * See description in 'webpack.config.dev' for more info.
      */
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
+
+    new LodashModuleReplacementPlugin(),
+
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug:    false
+    }),
+
+    new ExtractTextPlugin('styles.css'),
+
+    new HtmlWebpackPlugin({
+      production: true,
+      inject:     false,
+      template:   './src/index.html'
+    }),
+
     /**
-     * Some of you might recognize this! It minimizes all your JS output of chunks.
-     * Loaders are switched into a minmizing mode. Obviously, you'd only want to run
-     * your production code through this!
+     * Add a service worker
      */
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
+    new OfflinePlugin({
+      ServiceWorker: {events: true},
+      AppCache:      false
     })
   ],
-  module: {
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+    alias:      {
+      'react':     'preact-compat',
+      'react-dom': 'preact-compat'
+    }
+  },
+  module:  {
     loaders: [
       {
-        test: /\.js$/,
-        loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        test:    /\.jsx?$/,
+        loaders: ['babel-loader'],
+        include: [
+          path.join(__dirname, 'src'),
+          path.join(__dirname, './node_modules/preact-compat')
+        ]
       },
       {
-        test: /\.scss$/,
-        loader: 'style!css!postcss!sass'
+        test:    /\.(jpg|jpeg|png)$/,
+        loaders: [
+          'file-loader?name=static/[name].[hash].[ext]'
+        ],
+        include: path.join(__dirname, 'static')
+      },
+      {
+        test:   /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader:         [
+            {loader: 'css-loader'},
+            {loader: 'postcss-loader'},
+            {loader: 'sass-loader'}
+          ]
+        })
+      },
+      {
+        test:   /\.svg$/,
+        loader: 'url-loader?limit=8192!svgo-loader'
       }
     ]
   }

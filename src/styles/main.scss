@@ -1,235 +1,234 @@
-// @import url(https://fonts.googleapis.com/css?family=Raleway:100,400);
-@import url('https://fonts.googleapis.com/css?family=Biryani:400,800,900');
-
-$main-bg-color: #000000;
-$text-color: #ffffff;
-$accent-blue: #00A9E0;
-$darker-blue: #0057B8;
-$accent-red: #E4002B;
-
+$main-bg-color: #000;
+$text-color: #fff;
+$accent-blue: #00a9e0;
+$darker-blue: #0057b8;
+$accent-red: #e4002b;
 
 $accent-gray: #e1e0dd;
 $accent-black: #35342f;
 $accent-orange: #ec6b2d;
 
-
-html {
-  min-height: 100%;
-}
-
-body {
-  background-color: $main-bg-color;
-  background: url("/static/sparkler.jpeg");
-  background-attachment: fixed;
-  background-size: cover;
-  color: $text-color;
-
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-
-  font-family: 'Biryani', sans-serif;
-  position: relative;
-  padding: 0;
-  margin: 0;
-
-  overflow-x: hidden;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(#111, 0.3);
-    z-index: -1;
+@mixin break {
+  @media screen and (min-width: 501px) {
+    @content;
   }
 }
 
-a {
-  cursor: pointer;
+%button {
+  transition:      background-color 0.2s, color 0.2s;
+
+  border-radius:   3px;
+  padding:         0.7em 0.5em 0.5em;
+  font:            800 1.5em/1.2 'Biryani', sans-serif;
+  text-decoration: none;
+  text-align:      center;
+  cursor:          pointer;
 }
 
-.main-app-container {
-  padding: 2em 1em 0;
-  max-width: 800px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  min-height: 100vh;
+
+/**
+ * Fonts are now loaded via a link element
+ */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  background: $main-bg-color;
 }
 
-.main-app-nav {
+body {
+  position:            relative;
+  height:              100vh;
+  padding:             0;
+  margin:              0;
+  font-family:         'Biryani', sans-serif;
+  background-image:    url("../../static/silkscreen.svg"),
+                       linear-gradient(to left, rgba(black, 0.75), transparent, rgba(black, 0.75)),
+                       url("../../static/sparkler-min.jpg");
+  background-position: left top, center, center top;
+  background-repeat:   repeat, no-repeat, no-repeat;
+  background-size:     3px, cover, cover;
+  color:               $text-color;
+}
+
+a {
+  cursor:          pointer;
+  color:           inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 820px;
+  margin:    0 auto;
+  padding:   2em 1em 0;
+}
+
+.app {
+  position:                   absolute;
+  top:                        0;
+  left:                       0;
+  width:                      100vw;
+  height:                     100vh;
+
+  will-change:                scroll;
+  overflow-x:                 hidden;
+  overflow-y:                 scroll;
+
+  -webkit-overflow-scrolling: touch; // Required for momentum scrolling on iOS
+}
+
+// Header
+//------------------------------------------
+.app__header {
+  @include break {
+    font-size: 1.3em;
+  }
+
   h1 {
-    font-weight: 900;
-    display: inline-block;
-    margin: 0;
-    margin-left: -0.4em;
-
-    line-height: 1.3;
-
-    padding: 0.2em 0.4em 0;
+    display:          inline-block;
+    margin:           0 0 0 -0.4em;
+    padding:          0.2em 0.4em 0;
+    line-height:      1.3;
+    font-weight:      900;
     background-color: $accent-blue;
   }
 
   .background-red {
     background-color: $accent-red;
-    margin-left: -0.2em;
+    margin-left:      -0.2em;
   }
+
   .background-dark {
     background-color: $main-bg-color;
   }
 }
 
-
-.idea-container {
-  padding-top: 2em;
+// Ideas
+//------------------------------------------
+.app__ideas {
+  position: relative;
 }
+
 .idea-intro {
   font-weight: 900;
 }
 
 .idea-text {
-  font-size: 2em;
+  margin:      0 0 0.6em;
+  font-size:   2em;
   font-weight: 900;
-  margin-top: 0;
   line-height: 1.2;
-  margin-bottom: 0.6em;
+  outline:     none;
+
+  @include break {
+    font-size: 3em;
+  }
 }
 
 .idea-buttons {
-  flex-wrap: wrap;
-}
+  display:        flex;
+  flex-direction: column;
 
-%button {
-  font-family: 'Biryani', sans-serif;
-  padding: 0.7em 0.5em 0.5em;
-  font-size: 1.5em;
-  font-weight: 800;
-  line-height: 1.2;
-  text-decoration: none;
-  text-align: center;
-  transition: 0.2s;
-  border-radius: 3px;
+  @include break {
+    flex-direction: row;
+    flex-wrap:      wrap;
+  }
 }
 
 .idea-button {
-  flex: 1 0 40%;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   @extend %button;
 
+  flex:             1;
+
+  margin-bottom:    1em;
+  border:           none;
   background-color: $darker-blue;
-  color: #fff;
-  margin-bottom: 1em;
+  color:            #fff;
 
   &:hover {
     background-color: $accent-blue;
+  }
+
+  @include break {
+    flex: 1 0 45%;
+
+    &:nth-child(even) {
+      margin-left: 1em;
+    }
   }
 }
 
 .idea-button--accent {
   background-color: $accent-blue;
+
   &:hover {
-    color: $accent-blue;
+    color:            $accent-blue;
     background-color: #fff;
   }
 }
 
-.ideas-container {
-  flex-grow: 1;
-  position: relative;
+// transition
+.slide-enter,
+.slide-leave {
+  transition: transform 1s, opacity 0.75s;
+
+  will-change: transform, opacity;
+
+  opacity:    0;
 }
 
-// transition
-.slide-enter, .slide-leave {
-  transition: 1000ms;
-  width: 100%;
-}
 .slide-enter {
-  position: relative;
-  left: 110vw;
+  transform: translateX(50%);
 }
+
 .slide-enter-active {
-  left: 0;
+  transition-delay: 0s, 0.25s;
+  transform:        translateX(0);
+  opacity:          1;
 }
+
 .slide-leave {
   position: absolute;
-  left: 0;
-  top: 0;
+  top:      0;
 }
+
 .slide-leave-active {
-  left: -110vw;
+  transform: translateX(-50%);
 }
 
-
-
-
-
-footer {
-  // text-align: center;
-  padding-top: 8em;
-  a {
-    text-decoration: none;
-  }
+// Footer
+//------------------------------------------
+.app__footer {
+  margin-top: 3em;
 }
 
 .start-over {
+  @extend %button;
 
-  button {
-    text-transform: uppercase;
-    display: inline-block;
-    border: none;
-    @extend %button;
-    background-color: #111;
-    color: inherit;
+  display:          inline-block;
+  border:           none;
+  text-transform:   uppercase;
+  background-color: #111;
+  color:            inherit;
 
-    &:hover {
-      background-color: #000;
-    }
+  &:hover {
+    background-color: #000;
   }
-
 }
 
 .credit {
-  a {
-    background-color: $accent-red;
-    display: inline-block;
-    padding: 0 0.3em;
-    line-height: 1.4;
-    color: #fff;
-    transition: 0.1s;
-    &:hover {
-      background-color: #fff;
-      color: $darker-blue;
-    }
-  }
-}
+  transition:       background-color 0.1s, color 0.1s;
 
-@media screen and (min-width: 501px) {
-  .main-app-nav {
-    font-size: 1.3em;
-  }
+  background-color: $accent-red;
+  display:          inline-block;
+  padding:          0 0.3em;
+  line-height:      1.4;
+  color:            #fff;
 
-  .idea-text {
-    font-size: 3em;
-    outline: none;
+  &:hover {
+    background-color: #fff;
+    color:            $darker-blue;
   }
-
-  .idea-buttons {
-    display: flex;
-  }
-
-  .idea-button {
-    margin-right: 1em;
-  }
-
 }
