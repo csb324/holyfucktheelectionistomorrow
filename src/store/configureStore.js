@@ -1,15 +1,29 @@
+import { createStore } from 'redux';
+
+import rootReducer from '../reducers';
+
 /**
- * Based on the current environment variable, we need to make sure
- * to exclude any DevTools-related code from the production builds.
- * The code is envify'd - using 'DefinePlugin' in Webpack.
+ * Hand off Redux logging to Redux Dev Tools extension
+ * https://github.com/zalmoxisus/redux-devtools-extension
+ *
+ * @param initialState
+ * @returns {*}
  */
+function configureStore(initialState) {
+  const store = createStore(
+    rootReducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // eslint-disable-line
+  );
 
-let loadedStore = null;
+  // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
+  if (module.hot) {
+    module.hot.accept('../reducers', () =>
+      store.replaceReducer(require('../reducers').default) // eslint-disable-line
+    );
+  }
 
-if (process.env.NODE_ENV === 'production') {
-  loadedStore = require('./configureStore.prod');
-} else {
-  loadedStore = require('./configureStore.dev');
+  return store;
 }
 
-export const configureStore = loadedStore;
+export default configureStore;
