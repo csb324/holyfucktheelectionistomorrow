@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
-const Links = ({ pretext, text, links }) => (
+const Links = ({ pretext = '', text = '', links = [] }) => (
   <div className="container">
     <p className="idea-intro">{pretext}</p>
     <div className="idea-text">{text}</div>
@@ -16,9 +16,9 @@ const Links = ({ pretext, text, links }) => (
 );
 
 Links.propTypes = {
-  pretext: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  links: PropTypes.array.isRequired,
+  pretext: PropTypes.string,
+  text: PropTypes.string,
+  links: PropTypes.array,
 };
 
 export default Links;

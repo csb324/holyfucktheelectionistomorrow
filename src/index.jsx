@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 
 /**
  * Import the stylesheet you want used! Here we just reference
@@ -17,14 +17,25 @@ const getLink = (linkProps) => () => (<Links {...linkProps} />);
 const routes = {
   path: '/',
   component: App,
-  indexRoute: { component: getLink(pages['/']) },
+  indexRoute: { component: getLink(pages.index) },
   childRoutes: Object.keys(pages).map((path) => ({ path, component: getLink(pages[path]) }))
 };
 
 ReactDOM.render(
-  <Router history={browserHistory} routes={routes} />,
+  <Router history={hashHistory} routes={routes} />,
   document.getElementById('root')
 );
+
+/**
+ * Prevent full-page reloads when clicking the header or "start over" links
+ */
+[...document.querySelectorAll('[data-restart]')].forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    hashHistory.push('/');
+  });
+});
+
 
 /**
  * Add support for Service Worker

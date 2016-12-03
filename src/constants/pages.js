@@ -1,7 +1,7 @@
 import actionLinks from './actions';
 
 const pages = {
-  '/': {
+  index: {
     pretext: 'FIRST THINGS FIRST...',
     text: 'ARE YOU OKAY?',
     links: [
@@ -17,7 +17,7 @@ const pages = {
       { label: 'TAKE FUCKING CARE OF YOURSELF', href: 'https://www.wired.com/2016/11/critical-role-self-care-handling-post-election-stress/' },
       { label: 'PICK UP A FUCKING PENCIL AND WRITE THIS SHIT DOWN', href: 'http://nymag.com/scienceofus/2016/09/journaling-can-help-you-out-of-a-bad-mood.html' },
       { label: 'MAKE SOME BAD FUCKING ART OR SOMETHING', href: 'https://makeamericacolorfulagain.com/trump_ebooks.pdf' },
-      { label: 'REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS', href: 'https://www.buzzfeed.com/kelseyimpicciche/we-have-a-message-for-those-who-feel-alone?utm_term=.haK81DMVoa#.mcWMPKGd8V' },
+      { label: 'REMEMBER THAT BUZZFEED HAS YOUR BACK I GUESS', href: 'https://www.buzzfeed.com/kelseyimpicciche/we-have-a-message-for-those-who-feel-alone?utm_term=.haK81DMVoa.mcWMPKGd8V' },
       { label: 'AND SO DO ALL THESE PEOPLE WITH FUCKING SAFETY PINS', href: 'https://www.good.is/articles/safety-pin-america-trump-brexit' },
       { label: 'OH BUT ONE MORE THING...', href: '/one-more-thing' }
     ]
@@ -54,13 +54,13 @@ const getActions = (acc, topic) => {
         { label: 'TIME', href: `/fightback/${topic}/volunteer` }
       ]
     },
-    [`fightback/${topic}/donate`]: {
+    [`/fightback/${topic}/donate`]: {
       pretext: 'YOU SHOULD...',
       text: 'DONATE TO ONE OF THESE FUCKING ORGANIZATIONS',
       links: topicLinks.donate.concat(shareLink)
     },
 
-    [`fightback/${topic}/volunteer`]: {
+    [`/fightback/${topic}/volunteer`]: {
       pretext: 'YOU SHOULD...',
       text: 'VOLUNTEER WITH ONE OF THESE FUCKING ORGANIZATIONS',
       links: topicLinks.volunteer.concat(shareLink)
