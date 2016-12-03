@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
 
 /**
  * Import the stylesheet you want used! Here we just reference
@@ -8,19 +8,21 @@ import { Provider } from 'react-redux';
  */
 import './styles/main.scss';
 
-/**
- * Both configureStore and Root are required conditionally.
- * See configureStore.js and Root.js for more details.
- */
-import configureStore from './store/configureStore';
+import pages from './constants/pages';
 import App from './containers/App';
+import Links from './components/links';
 
-const store = configureStore();
+const getLink = (linkProps) => () => (<Links {...linkProps} />);
+
+const routes = {
+  path: '/',
+  component: App,
+  indexRoute: { component: getLink(pages['/']) },
+  childRoutes: Object.keys(pages).map((path) => ({ path, component: getLink(pages[path]) }))
+};
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router history={browserHistory} routes={routes} />,
   document.getElementById('root')
 );
 
