@@ -12,6 +12,12 @@ import pages from './constants/pages';
 import App from './containers/App';
 import Links from './components/links';
 
+/**
+ * Add support for Service Worker
+ * Reload the page automatically when updated code is detected
+ */
+import './offline';
+
 const getLink = (linkProps) => () => (<Links {...linkProps} />);
 
 const routes = {
@@ -27,36 +33,16 @@ ReactDOM.render(
 );
 
 /**
- * Prevent full-page reloads when clicking the header or "start over" links
+ * 1) Prevent full-page reloads when clicking the header or "start over" links
+ * 2) Capture the outbound action links for Analytics
+ * (They aren't rendered by React, so bind to the window)
  */
 [...document.querySelectorAll('[data-restart]')].forEach((el) => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     hashHistory.push('/');
+
+    const { type, tag } = pages.index.analytics;
+    window.ga('send', 'event', type, tag);
   });
 });
-
-
-/**
- * Add support for Service Worker
- * Reload the page automatically when updated code is detected
- */
-if (process.env.NODE_ENV === 'production') {
-  const runtime = require('offline-plugin/runtime') // eslint-disable-line
-
-  runtime.install({
-    onUpdateReady: () => {
-      console.log('SW Event:', 'onUpdateReady');
-
-      // Tells to new SW to take control immediately
-      runtime.applyUpdate();
-    },
-
-    onUpdated: () => {
-      console.log('SW Event:', 'onUpdated');
-
-      // Reload page to load the new version
-      window.location.reload();
-    }
-  });
-}

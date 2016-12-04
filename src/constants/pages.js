@@ -2,6 +2,7 @@ import actionLinks from './actions';
 
 const pages = {
   index: {
+    analytics: { type: 'setTopic', tag: 'home' },
     pretext: 'FIRST THINGS FIRST...',
     text: 'ARE YOU OKAY?',
     links: [
@@ -10,6 +11,7 @@ const pages = {
     ]
   },
   '/selfcare': {
+    analytics: { type: 'setTopic', tag: 'selfcare' },
     pretext: "THAT'S FUCKING FAIR.",
     text: 'CHECK THIS SHIT OUT (AND COME BACK LATER IF YOU WANT)',
     links: [
@@ -23,6 +25,7 @@ const pages = {
     ]
   },
   '/fightback': {
+    analytics: { type: 'setTopic', tag: 'fightback' },
     pretext: "OKAY. LET'S FUCK SHIT UP.",
     text: "WHAT'S ON YOUR MIND?",
     links: [
@@ -34,6 +37,7 @@ const pages = {
     ],
   },
   '/one-more-thing': {
+    analytics: { type: 'setTopic', tag: 'share' },
     text: 'TELL YOUR FUCKING FRIENDS',
     links: [
       { label: 'FACEBOOK', href: 'https://www.facebook.com/sharer/sharer.php?u=http%3A//www.holyfucktheelection.com/' },
@@ -47,6 +51,7 @@ const getActions = (acc, topic) => {
   const shareLink = [{ label: 'FUCK YEAH. NOW WHAT?', href: '/one-more-thing' }];
   const links = {
     [`/fightback/${topic}`]: {
+      analytics: { type: 'setTopic', tag: topic },
       pretext: 'FUCK YEAH.',
       text: 'WHAT CAN YOU SPARE?',
       links: [
@@ -55,12 +60,14 @@ const getActions = (acc, topic) => {
       ]
     },
     [`/fightback/${topic}/donate`]: {
+      analytics: { type: 'setAction', tag: `${topic}:donate` },
       pretext: 'YOU SHOULD...',
       text: 'DONATE TO ONE OF THESE FUCKING ORGANIZATIONS',
       links: topicLinks.donate.concat(shareLink)
     },
 
     [`/fightback/${topic}/volunteer`]: {
+      analytics: { type: 'setAction', tag: `${topic}:volunteer` },
       pretext: 'YOU SHOULD...',
       text: 'VOLUNTEER WITH ONE OF THESE FUCKING ORGANIZATIONS',
       links: topicLinks.volunteer.concat(shareLink)
