@@ -24,7 +24,7 @@ module.exports = {
      * will not be emitted. If you want your webpack to 'fail', you need to check out
      * the bail option.
      */
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     /**
      * DefinePlugin allows us to define free variables, in any webpack build, you can
      * use it to create separate builds with debug logging or adding global constants!
