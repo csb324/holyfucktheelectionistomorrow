@@ -10,16 +10,38 @@ const onClick = (href, analytics) => () => {
   }
 };
 
+const getLinkInternal = (href, label, analytics) => (
+  <Link
+    onClick={onClick(href, analytics)}
+    className="idea-button"
+    to={href}
+    key={href}
+  >
+    {label}
+  </Link>
+  );
+
+const getLinkExternal = (href, label) => (
+  <a key={href} onClick={onClick(href)} className="idea-button" href={href}>{label}</a>
+  );
+
 const Links = ({ analytics = {}, pretext = '', text = '', links = [] }) => (
   <div className="container">
     <p className="idea-intro">{pretext}</p>
     <div className="idea-text">{text}</div>
     <div className="idea-buttons">
-      {links.map(({ href, label }, i) => (
-        href.indexOf('http') > -1
-          ? <a onClick={onClick(href)} className="idea-button" href={href}>{label}</a>
-          : <Link onClick={onClick(href, analytics)} className="idea-button" to={href} key={`link-${i}`}>{label}</Link>
-      ))}
+      {links.map(({ href, txt }) => {
+        const words = txt.split(' ');
+        const last = words.pop();
+        const label = `${txt.join(' ')}\u00a0${last}`;
+
+        return (
+          href.indexOf('http') > -1
+            ? getLinkExternal(href, label)
+            : getLinkInternal(href, label, analytics)
+        );
+      }
+      )}
     </div>
   </div>
 );
